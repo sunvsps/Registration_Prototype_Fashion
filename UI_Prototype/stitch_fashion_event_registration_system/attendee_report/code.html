@@ -1,0 +1,662 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-highest":"#353438","surface-bright":"#39393c","primary-container":"#d4af37","on-secondary-fixed":"#261900","error":"#ffb4ab","on-primary":"#3c2f00","on-tertiary-fixed-variant":"#464745","surface":"#131316","on-secondary-container":"#dab36a","on-primary-fixed":"#241a00","surface-container-low":"#1b1b1e","on-primary-fixed-variant":"#574500","inverse-surface":"#e5e1e6","tertiary-fixed":"#e3e2e0","tertiary-container":"#b3b3b0","on-error":"#690005","on-tertiary-fixed":"#1a1c1a","on-primary-container":"#554300","on-surface":"#e5e1e6","tertiary-fixed-dim":"#c7c6c4","on-error-container":"#ffdad6","surface-variant":"#353438","inverse-primary":"#735c00","background":"#131316","primary-fixed":"#ffe088","secondary-fixed":"#ffdea5","tertiary":"#cfcecc","surface-tint":"#e9c349","on-secondary-fixed-variant":"#5d4201","secondary-fixed-dim":"#e9c176","secondary-container":"#604403","primary-fixed-dim":"#e9c349","surface-container-high":"#2a2a2d","error-container":"#93000a","secondary":"#e9c176","on-tertiary-container":"#444543","on-secondary":"#412d00","surface-container-lowest":"#0e0e11","on-surface-variant":"#d0c5af","on-tertiary":"#2f312f","on-background":"#e5e1e6","outline-variant":"#4d4635","surface-container":"#1f1f22","inverse-on-surface":"#303033","primary":"#f2ca50","outline":"#99907c","surface-dim":"#131316"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xs":"0.25rem","space-sm":"0.5rem","margin":"3rem","space-xl":"2.5rem","margin-mobile":"1.25rem","gutter":"1.5rem","gutter-mobile":"0.75rem","space-lg":"1.5rem","space-md":"1rem"},fontFamily:{"headline-md":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"display-hero":["Playfair Display"],"body-md":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"headline-lg":["Playfair Display"],"display-hero-mobile":["Playfair Display"],"title-editorial":["Playfair Display"],"label-caps-editorial":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"mono-data":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"headline-md":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"500"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"400"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0.01em",fontWeight:"400"}],"headline-sm":["22px",{lineHeight:"30px",letterSpacing:"0.01em",fontWeight:"600"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.015em",fontWeight:"400"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"400"}],"title-editorial":["18px",{lineHeight:"26px",letterSpacing:"0.02em",fontWeight:"500"}],"label-caps-editorial":["11px",{lineHeight:"14px",letterSpacing:"0.14em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"0.01em",fontWeight:"300"}],"mono-data":["12px",{lineHeight:"16px",letterSpacing:"0.08em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between py-6 shadow-[1px_0_0_0_rgba(212,175,55,0.08)]"><div class="flex flex-col"><div class="px-6 pb-6"><div class="font-headline-sm text-headline-sm tracking-wider uppercase text-primary">L'ÉTOILE</div><div class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.2em] text-on-surface-variant mt-1">Haute Couture Management</div></div><div class="px-6 py-2"><div class="font-label-caps-editorial text-label-caps-editorial text-outline uppercase tracking-[0.16em] mb-3">Main Portal</div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="executive-overview" href="#"><span class="material-symbols-outlined text-[19px]">dashboard</span><span class="font-label-md text-label-md tracking-wide">Executive Overview</span></a></nav></div><div class="px-6 py-3"><div class="font-label-caps-editorial text-label-caps-editorial text-outline uppercase tracking-[0.16em] mb-3">Reports</div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="register-report" href="#"><span class="material-symbols-outlined text-[19px]">assignment</span><span class="font-label-md text-label-md tracking-wide">Register Report</span></a><a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded transition-all bg-surface-container-high text-primary font-bold" data-path="attendee-report" href="#"><span class="material-symbols-outlined text-[19px]">groups</span><span class="font-label-md text-label-md tracking-wide">Attendee Report</span></a></nav></div><div class="px-6 py-3"><div class="font-label-caps-editorial text-label-caps-editorial text-outline uppercase tracking-[0.16em] mb-3">Control Center</div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="logs" href="#"><span class="material-symbols-outlined text-[19px]">receipt_long</span><span class="font-label-md text-label-md tracking-wide">Logs</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="users" href="#"><span class="material-symbols-outlined text-[19px]">manage_accounts</span><span class="font-label-md text-label-md tracking-wide">Users</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="on-off-event" href="#"><span class="material-symbols-outlined text-[19px]">toggle_on</span><span class="font-label-md text-label-md tracking-wide">On-Off Event</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="import-register" href="#"><span class="material-symbols-outlined text-[19px]">upload_file</span><span class="font-label-md text-label-md tracking-wide">Import Register</span></a></nav></div></div><div class="px-6 pt-4"><div class="pt-2 text-center font-mono-data text-[10px] text-outline/60 tracking-wider">Copyright © 2026 IN ZENITH. All rights reserved.</div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 flex items-center justify-between px-8 shadow-[0_1px_0_0_rgba(212,175,55,0.12)]"><div class="flex items-center gap-5"><div class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high shadow-[inset_0_0_0_1px_rgba(212,175,55,0.3)]"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-caps-editorial text-label-caps-editorial tracking-wider text-primary">EVENT STATUS: LIVE / OPEN</span></div></div><div class="flex items-center gap-4"><div class="h-5 w-px bg-surface-container-highest"></div><div class="flex items-center gap-3 pl-1"><div class="text-right"><div class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Eleonore Vance</div><div class="font-label-caps-editorial text-label-caps-editorial uppercase text-on-surface-variant tracking-wider leading-tight">Directeur Backstage</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><button class="text-outline hover:text-error transition-colors p-1" title="Logout" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></header><main class="w-full pt-16 bg-surface px-8 min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Top Subtle Ambient Light -->
+<div class="relative w-full">
+<div class="absolute -top-6 left-1/4 w-96 h-36 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Editorial Header Section -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-6 pt-6 pb-6">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="font-label-caps-editorial text-label-caps-editorial tracking-[0.22em] text-secondary uppercase">Atelier Archive • Fall/Winter 2025</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-mono-data text-mono-data text-outline uppercase text-[11px] tracking-widest">DOC-ID: ATT-8842-PARIS</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-2">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Attendee Report</h1>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant/85 font-normal">(รายงานผู้เข้าร่วมงานที่ Check-in หน้างาน)</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+      บันทึกและตรวจสอบรายชื่อผู้เข้าร่วมงานที่สแกนเช็คอินเข้างานแล้วแบบ Real-time
+    </p>
+</div>
+<!-- Export Action Button -->
+<div class="relative group">
+<button class="flex items-center gap-2.5 bg-primary text-on-primary hover:bg-secondary px-5 py-3 transition-all rounded shadow-md active:scale-95 font-medium" id="exportDropdownBtn" onclick="triggerToast('กำลังส่งออกไฟล์ Attendee Report (CSV / XLSX)...')" type="button">
+<span class="material-symbols-outlined text-[19px]">file_download</span>
+<span class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.16em]">Export Attendee Report</span>
+<span class="font-mono-data text-mono-data text-[11px] text-on-primary/75">(CSV / XLSX)</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Single Summary Card (matching Executive Overview & Register Report format) -->
+<div class="bg-surface-container-low p-6 rounded-lg shadow-sm border border-outline-variant/30 mb-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+<!-- Left side: Title & Live indicator -->
+<div class="lg:col-span-3 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-high w-fit mb-3">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-caps-editorial text-label-caps-editorial text-primary uppercase tracking-wider">LIVE CHECK-IN FEED</span>
+</div>
+<h2 class="font-title-editorial text-title-editorial text-on-surface text-[19px] leading-snug">
+        ผู้เข้าร่วมงาน<br><span class="text-on-surface-variant text-[15px] font-normal">(Checked-in Guests)</span>
+</h2>
+<p class="font-body-sm text-body-sm text-outline mt-1">ยอดผู้เข้าสู่พื้นที่จัดแสดงงานจริง</p>
+</div>
+<!-- Center: Large prominent highlight metric & progress bar -->
+<div class="lg:col-span-5 lg:border-l lg:border-r border-outline-variant/30 lg:px-8 flex flex-col justify-center">
+<div class="flex items-baseline justify-between mb-2">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-[40px] text-primary font-serif font-normal leading-none">342</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant font-normal">/ 418</span>
+<span class="font-body-md text-body-md text-on-surface-variant ml-1">คน</span>
+</div>
+<span class="font-mono-data text-mono-data text-secondary text-sm font-semibold">81.8% เช็คอินสำเร็จ</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 81.8%"></div>
+</div>
+<div class="flex items-center justify-between mt-2.5 text-outline font-body-sm text-body-sm">
+<span class="">รอเช็คอินคงเหลืออีก: <strong class="text-on-surface font-mono-data">76</strong> คน</span>
+<span class="text-secondary font-mono-data text-[11px]">อัปเดตอัตโนมัติล่าสุด 19:42 CET</span>
+</div>
+</div>
+<!-- Right side: 2 sub-type breakdown cards -->
+<div class="lg:col-span-4 grid grid-cols-2 gap-3.5">
+<!-- Card 1: Normal (ทั่วไป) -->
+<div class="bg-surface-container-high/70 p-4 rounded-lg flex flex-col justify-between border border-outline-variant/20 hover:border-secondary/40 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps-editorial text-label-caps-editorial tracking-wider uppercase text-on-surface-variant">Normal</span>
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="font-title-editorial text-title-editorial text-on-surface text-[22px] font-semibold">
+          179 <span class="font-body-sm text-body-sm text-outline font-normal">คน</span>
+</div>
+<div class="font-body-sm text-body-sm text-outline mt-1">
+          ทั่วไป เช็คอินแล้ว
+        </div>
+</div>
+<!-- Card 2: Import (นำเข้า) -->
+<div class="bg-surface-container-high/70 p-4 rounded-lg flex flex-col justify-between border border-outline-variant/20 hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps-editorial text-label-caps-editorial tracking-wider uppercase text-primary">Import</span>
+<span class="inline-block w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<div class="font-title-editorial text-title-editorial text-on-surface text-[22px] font-semibold">
+          163 <span class="font-body-sm text-body-sm text-outline font-normal">คน</span>
+</div>
+<div class="font-body-sm text-body-sm text-outline mt-1">
+          นำเข้า เช็คอินแล้ว
+        </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Search & Filter Bar -->
+<div class="bg-surface-container-low p-4 rounded-lg mb-6 shadow-sm border border-outline-variant/20 flex flex-col xl:flex-row gap-4 items-stretch xl:items-center justify-between">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[320px]">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[19px]">search</span>
+<input class="w-full bg-surface-container-high rounded text-on-surface pl-10 pr-10 py-2.5 font-body-md text-body-md placeholder:text-outline/70 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all border-none" id="attendeeSearch" placeholder="ค้นหาชื่อ-นามสกุล, สังกัด หรือเบอร์โทรศัพท์ (Search attendee name, company)..." type="text">
+<button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" id="clearSearchBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Interactive Filters Strip -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Type Filter -->
+<div class="flex items-center bg-surface-container-high rounded px-3 py-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[17px] text-secondary mr-2">filter_alt</span>
+<span class="font-label-caps-editorial text-label-caps-editorial text-outline mr-2 uppercase">ประเภท:</span>
+<select class="bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer pr-2 border-none" id="typeFilter">
+<option class="bg-surface-container-high text-on-surface" value="ALL">ทั้งหมด (All Types)</option>
+<option class="bg-surface-container-high text-on-surface" value="NORMAL">Normal (ทั่วไป)</option>
+<option class="bg-surface-container-high text-on-surface" value="IMPORT">Import (นำเข้า)</option>
+</select>
+</div>
+<!-- Quick Status Badge -->
+<div class="flex items-center gap-2 px-3 py-2 rounded bg-surface-container-high/60 text-outline border border-outline-variant/20">
+<span class="material-symbols-outlined text-[16px] text-primary">how_to_reg</span>
+<span class="font-label-md text-label-md text-on-surface-variant" id="filteredCount">แสดง 342 รายชื่อที่เช็คอินแล้ว</span>
+</div>
+<!-- Reset Filter Button -->
+<button class="flex items-center gap-1.5 px-3 py-2 rounded bg-surface-container-high hover:bg-surface-container-highest text-outline hover:text-on-surface transition-all text-label-md font-label-md" id="resetFilterBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span class="">รีเซ็ต (Reset)</span>
+</button>
+</div>
+</div>
+<!-- Master Clean Attendee Table -->
+<div class="bg-surface-container-low rounded-lg shadow-sm border border-outline-variant/20 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="attendeesMasterTable">
+<thead>
+<tr class="bg-surface-container-lowest text-outline font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.12em] border-b border-outline-variant/30">
+<th class="py-3.5 pl-6 pr-3 w-16 text-center">ลำดับ (No.)</th>
+<th class="py-3.5 px-4">ข้อมูลผู้เข้าร่วม (Guest Name &amp; Organization)</th>
+<th class="py-3.5 px-4">ประเภท (Type)</th>
+<th class="py-3.5 px-4">เวลาที่เช็คอิน (Timestamp)</th>
+<th class="py-3.5 px-4">ประตู / ช่องทาง (Gate)</th>
+<th class="py-3.5 px-4">สถานะ (Status)</th>
+<th class="py-3.5 pr-6 pl-4 text-right">จัดการ (Actions)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/15" id="attendeeTableBody">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/60 transition-colors group" data-guest="HRH Princess Sirivannavari พระองค์เจ้าสิริวัณณวรีฯ VVIP Royal Patron 081-992-8811" data-type="NORMAL">
+<td class="py-4 pl-6 pr-3 text-center font-mono-data text-mono-data text-outline">01</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-title-editorial text-secondary text-sm shrink-0 border border-secondary/20">
+                PS
+              </div>
+<div>
+<div class="font-title-editorial text-title-editorial text-on-surface group-hover:text-primary transition-colors text-[16px]">
+                  HRH Princess Sirivannavari
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  พระองค์เจ้าสิริวัณณวรีฯ <span class="text-outline font-mono-data text-[11px] ml-1">· VVIP Royal Patron</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-caps-editorial text-[10px] uppercase tracking-wider font-semibold border border-secondary/20">
+              Normal (ทั่วไป)
+            </span>
+</td>
+<td class="py-4 px-4 font-mono-data text-mono-data text-on-surface">
+<div class="">19:42:18 CET</div>
+<div class="text-[11px] text-outline font-normal">บัตรที่นั่ง: Front Row A-01</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Gate A (VIP Portal)</div>
+<div class="font-body-sm text-[11px] text-outline">Terminal STF-01</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-[12px]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              เช็คอินแล้ว / In Venue
+            </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" onclick="openDetailsModal('HRH Princess Sirivannavari', 'VVIP Royal Patron', 'Normal (ทั่วไป)', '19:42:18 CET', 'Gate A (VIP Portal)', 'Front Row A-01', '081-992-8811')" title="ดูรายละเอียดผู้เข้าร่วมงาน" type="button">
+<span class="material-symbols-outlined text-[17px]">visibility</span>
+<span class="">ดูรายละเอียด</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/60 transition-colors group" data-guest="Dame Anna Wintour แอนนา วินทัวร์ Vogue Global Editorial Director 092-441-9988" data-type="IMPORT">
+<td class="py-4 pl-6 pr-3 text-center font-mono-data text-mono-data text-outline">02</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-title-editorial text-primary text-sm shrink-0 border border-primary/20">
+                AW
+              </div>
+<div>
+<div class="font-title-editorial text-title-editorial text-on-surface group-hover:text-primary transition-colors text-[16px]">
+                  Dame Anna Wintour
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  แอนนา วินทัวร์ <span class="text-outline font-mono-data text-[11px] ml-1">· Condé Nast Global Press</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-label-caps-editorial text-[10px] uppercase tracking-wider font-semibold border border-primary/30">
+              Import (นำเข้า)
+            </span>
+</td>
+<td class="py-4 px-4 font-mono-data text-mono-data text-on-surface">
+<div class="">19:40:02 CET</div>
+<div class="text-[11px] text-outline font-normal">บัตรที่นั่ง: Front Row A-04</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Gate A (VIP Portal)</div>
+<div class="font-body-sm text-[11px] text-outline">Terminal STF-04</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-[12px]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              เช็คอินแล้ว / In Venue
+            </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" onclick="openDetailsModal('Dame Anna Wintour', 'Condé Nast / Vogue Global', 'Import (นำเข้า)', '19:40:02 CET', 'Gate A (VIP Portal)', 'Front Row A-04', '092-441-9988')" title="ดูรายละเอียดผู้เข้าร่วมงาน" type="button">
+<span class="material-symbols-outlined text-[17px]">visibility</span>
+<span class="">ดูรายละเอียด</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/60 transition-colors group" data-guest="Thanpuying Sasima Srivikorn ท่านผู้หญิงศศิมา ศรีวิกรม์ Haute Atelier Patron 081-334-1122" data-type="NORMAL">
+<td class="py-4 pl-6 pr-3 text-center font-mono-data text-mono-data text-outline">03</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-title-editorial text-secondary text-sm shrink-0 border border-secondary/20">
+                SS
+              </div>
+<div>
+<div class="font-title-editorial text-title-editorial text-on-surface group-hover:text-primary transition-colors text-[16px]">
+                  Thanpuying Sasima Srivikorn
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  ท่านผู้หญิงศศิมา ศรีวิกรม์ <span class="text-outline font-mono-data text-[11px] ml-1">· Haute Atelier Patron</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-caps-editorial text-[10px] uppercase tracking-wider font-semibold border border-secondary/20">
+              Normal (ทั่วไป)
+            </span>
+</td>
+<td class="py-4 px-4 font-mono-data text-mono-data text-on-surface">
+<div class="">19:38:45 CET</div>
+<div class="text-[11px] text-outline font-normal">บัตรที่นั่ง: Salon East B-12</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Gate B (Atelier Wing)</div>
+<div class="font-body-sm text-[11px] text-outline">Terminal AT-02</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-[12px]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              เช็คอินแล้ว / In Venue
+            </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" onclick="openDetailsModal('Thanpuying Sasima Srivikorn', 'Haute Atelier Patron', 'Normal (ทั่วไป)', '19:38:45 CET', 'Gate B (Atelier Wing)', 'Salon East B-12', '081-334-1122')" title="ดูรายละเอียดผู้เข้าร่วมงาน" type="button">
+<span class="material-symbols-outlined text-[17px]">visibility</span>
+<span class="">ดูรายละเอียด</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container/60 transition-colors group" data-guest="François-Henri Pinault ฟรองซัวส์-อองรี ปิโนลต์ Kering Group Executive 085-882-9900" data-type="IMPORT">
+<td class="py-4 pl-6 pr-3 text-center font-mono-data text-mono-data text-outline">04</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-title-editorial text-primary text-sm shrink-0 border border-primary/20">
+                FP
+              </div>
+<div>
+<div class="font-title-editorial text-title-editorial text-on-surface group-hover:text-primary transition-colors text-[16px]">
+                  François-Henri Pinault
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  ฟรองซัวส์-อองรี ปิโนลต์ <span class="text-outline font-mono-data text-[11px] ml-1">· Kering Group Board</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-label-caps-editorial text-[10px] uppercase tracking-wider font-semibold border border-primary/30">
+              Import (นำเข้า)
+            </span>
+</td>
+<td class="py-4 px-4 font-mono-data text-mono-data text-on-surface">
+<div class="">19:35:10 CET</div>
+<div class="text-[11px] text-outline font-normal">บัตรที่นั่ง: Front Row B-03</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Gate B (Atelier Wing)</div>
+<div class="font-body-sm text-[11px] text-outline">Terminal AT-01</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-[12px]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              เช็คอินแล้ว / In Venue
+            </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" onclick="openDetailsModal('François-Henri Pinault', 'Kering Group Board', 'Import (นำเข้า)', '19:35:10 CET', 'Gate B (Atelier Wing)', 'Front Row B-03', '085-882-9900')" title="ดูรายละเอียดผู้เข้าร่วมงาน" type="button">
+<span class="material-symbols-outlined text-[17px]">visibility</span>
+<span class="">ดูรายละเอียด</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container/60 transition-colors group" data-guest="Davika Hoorne ใหม่ ดาวิกา โฮร์เน่ Global Brand Ambassador 089-112-4455" data-type="NORMAL">
+<td class="py-4 pl-6 pr-3 text-center font-mono-data text-mono-data text-outline">05</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-title-editorial text-secondary text-sm shrink-0 border border-secondary/20">
+                DH
+              </div>
+<div>
+<div class="font-title-editorial text-title-editorial text-on-surface group-hover:text-primary transition-colors text-[16px]">
+                  Davika Hoorne
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  ใหม่ ดาวิกา โฮร์เน่ <span class="text-outline font-mono-data text-[11px] ml-1">· Global Brand Ambassador</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-caps-editorial text-[10px] uppercase tracking-wider font-semibold border border-secondary/20">
+              Normal (ทั่วไป)
+            </span>
+</td>
+<td class="py-4 px-4 font-mono-data text-mono-data text-on-surface">
+<div class="">19:29:11 CET</div>
+<div class="text-[11px] text-outline font-normal">บัตรที่นั่ง: Front Row A-09</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Gate A (VIP Portal)</div>
+<div class="font-body-sm text-[11px] text-outline">Terminal STF-01</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-[12px]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              เช็คอินแล้ว / In Venue
+            </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" onclick="openDetailsModal('Davika Hoorne', 'Global Brand Ambassador', 'Normal (ทั่วไป)', '19:29:11 CET', 'Gate A (VIP Portal)', 'Front Row A-09', '089-112-4455')" title="ดูรายละเอียดผู้เข้าร่วมงาน" type="button">
+<span class="material-symbols-outlined text-[17px]">visibility</span>
+<span class="">ดูรายละเอียด</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container/60 transition-colors group" data-guest="Julien Martinez จูเลียน มาร์ติเนซ Getty Images Global Runway 086-778-9922" data-type="IMPORT">
+<td class="py-4 pl-6 pr-3 text-center font-mono-data text-mono-data text-outline">06</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-title-editorial text-primary text-sm shrink-0 border border-primary/20">
+                JM
+              </div>
+<div>
+<div class="font-title-editorial text-title-editorial text-on-surface group-hover:text-primary transition-colors text-[16px]">
+                  Julien Martinez
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  จูเลียน มาร์ติเนซ <span class="text-outline font-mono-data text-[11px] ml-1">· Getty Images Head Press</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-label-caps-editorial text-[10px] uppercase tracking-wider font-semibold border border-primary/30">
+              Import (นำเข้า)
+            </span>
+</td>
+<td class="py-4 px-4 font-mono-data text-mono-data text-on-surface">
+<div class="">19:25:40 CET</div>
+<div class="text-[11px] text-outline font-normal">บัตรที่นั่ง: Press Pit P-14</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Gate C (Press Wing)</div>
+<div class="font-body-sm text-[11px] text-outline">Terminal PR-02</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-[12px]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              เช็คอินแล้ว / In Venue
+            </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" onclick="openDetailsModal('Julien Martinez', 'Getty Images International', 'Import (นำเข้า)', '19:25:40 CET', 'Gate C (Press Wing)', 'Press Pit P-14', '086-778-9922')" title="ดูรายละเอียดผู้เข้าร่วมงาน" type="button">
+<span class="material-symbols-outlined text-[17px]">visibility</span>
+<span class="">ดูรายละเอียด</span>
+</button>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container/60 transition-colors group" data-guest="Korn Narongdej กรณ์ ณรงค์เดช Raimon Land Chairman 082-998-1133" data-type="NORMAL">
+<td class="py-4 pl-6 pr-3 text-center font-mono-data text-mono-data text-outline">07</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-title-editorial text-secondary text-sm shrink-0 border border-secondary/20">
+                KN
+              </div>
+<div>
+<div class="font-title-editorial text-title-editorial text-on-surface group-hover:text-primary transition-colors text-[16px]">
+                  Korn Narongdej
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  กรณ์ ณรงค์เดช <span class="text-outline font-mono-data text-[11px] ml-1">· Luxury Real Estate &amp; Patron</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-caps-editorial text-[10px] uppercase tracking-wider font-semibold border border-secondary/20">
+              Normal (ทั่วไป)
+            </span>
+</td>
+<td class="py-4 px-4 font-mono-data text-mono-data text-on-surface">
+<div class="">19:21:05 CET</div>
+<div class="text-[11px] text-outline font-normal">บัตรที่นั่ง: Front Row B-08</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Gate B (Atelier Wing)</div>
+<div class="font-body-sm text-[11px] text-outline">Terminal AT-01</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-[12px]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              เช็คอินแล้ว / In Venue
+            </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" onclick="openDetailsModal('Korn Narongdej', 'Raimon Land / Couture Patron', 'Normal (ทั่วไป)', '19:21:05 CET', 'Gate B (Atelier Wing)', 'Front Row B-08', '082-998-1133')" title="ดูรายละเอียดผู้เข้าร่วมงาน" type="button">
+<span class="material-symbols-outlined text-[17px]">visibility</span>
+<span class="">ดูรายละเอียด</span>
+</button>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="hover:bg-surface-container/60 transition-colors group" data-guest="Caroline de Maigret การอลีน เดอ แมแกร Chanel Ambassador 091-667-3344" data-type="IMPORT">
+<td class="py-4 pl-6 pr-3 text-center font-mono-data text-mono-data text-outline">08</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-title-editorial text-primary text-sm shrink-0 border border-primary/20">
+                CM
+              </div>
+<div>
+<div class="font-title-editorial text-title-editorial text-on-surface group-hover:text-primary transition-colors text-[16px]">
+                  Caroline de Maigret
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  การอลีน เดอ แมแกร <span class="text-outline font-mono-data text-[11px] ml-1">· Paris Literary &amp; Style Icon</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-label-caps-editorial text-[10px] uppercase tracking-wider font-semibold border border-primary/30">
+              Import (นำเข้า)
+            </span>
+</td>
+<td class="py-4 px-4 font-mono-data text-mono-data text-on-surface">
+<div class="">19:15:32 CET</div>
+<div class="text-[11px] text-outline font-normal">บัตรที่นั่ง: Row A-14</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-label-md text-label-md text-on-surface">Gate A (VIP Portal)</div>
+<div class="font-body-sm text-[11px] text-outline">Terminal STF-03</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-[12px]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              เช็คอินแล้ว / In Venue
+            </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" onclick="openDetailsModal('Caroline de Maigret', 'Chanel Ambassador / Paris Culture', 'Import (นำเข้า)', '19:15:32 CET', 'Gate A (VIP Portal)', 'Row A-14', '091-667-3344')" title="ดูรายละเอียดผู้เข้าร่วมงาน" type="button">
+<span class="material-symbols-outlined text-[17px]">visibility</span>
+<span class="">ดูรายละเอียด</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Clean Pagination Footer -->
+<div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="font-body-sm text-body-sm text-outline">
+      Showing <span class="text-on-surface font-semibold">1-10</span> of <span class="text-on-surface font-semibold">342</span> entries
+    </div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded bg-surface-container-high text-outline hover:text-on-surface font-mono-data text-mono-data disabled:opacity-40" disabled="" type="button">
+        Prev
+      </button>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded bg-primary text-on-primary font-mono-data text-mono-data font-bold" type="button">1</button>
+<button class="w-7 h-7 rounded hover:bg-surface-container-high text-outline font-mono-data text-mono-data transition-colors" type="button">2</button>
+<button class="w-7 h-7 rounded hover:bg-surface-container-high text-outline font-mono-data text-mono-data transition-colors" type="button">3</button>
+<span class="px-1 text-outline font-mono-data">...</span>
+<button class="w-7 h-7 rounded hover:bg-surface-container-high text-outline font-mono-data text-mono-data transition-colors" type="button">35</button>
+</div>
+<button class="px-3 py-1.5 rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-mono-data text-mono-data transition-colors" type="button">
+        Next
+      </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Guest Details Modal -->
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4" id="detailsModal">
+<div class="bg-surface-container-low w-full max-w-lg rounded-xl p-6 shadow-2xl border border-outline-variant/30 relative">
+<button class="absolute top-4 right-4 text-outline hover:text-on-surface transition-colors p-1" onclick="closeDetailsModal()" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-caps-editorial text-label-caps-editorial text-secondary uppercase tracking-[0.16em]">Guest Information Record</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-mono-data text-[10px] text-primary" id="detailModalType">Normal</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-0.5" id="detailModalName">Guest Name</h3>
+<p class="font-body-sm text-body-sm text-outline mb-6" id="detailModalOrg">Organization</p>
+<div class="space-y-3 bg-surface-container p-4 rounded-lg border border-outline-variant/20 mb-6 font-body-sm">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/15">
+<span class="text-outline">เวลาที่บันทึกเช็คอิน:</span>
+<span class="font-mono-data text-on-surface font-medium" id="detailModalTime">19:42:18 CET</span>
+</div>
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/15">
+<span class="text-outline">จุดคัดกรอง / ประตู:</span>
+<span class="text-on-surface font-medium" id="detailModalGate">Gate A (VIP Portal)</span>
+</div>
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/15">
+<span class="text-outline">ผังที่นั่งรับรอง (Seat):</span>
+<span class="font-title-editorial text-primary text-[15px]" id="detailModalSeat">Front Row A-01</span>
+</div>
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/15">
+<span class="text-outline">เบอร์โทรศัพท์ติดต่อ:</span>
+<span class="font-mono-data text-secondary" id="detailModalPhone">081-992-8811</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline">สถานะปัจจุบัน:</span>
+<span class="inline-flex items-center gap-1.5 text-primary font-medium">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> เช็คอินแล้ว (In Venue)
+        </span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex-1 py-2.5 bg-primary text-on-primary font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.16em] rounded hover:bg-secondary transition-all font-semibold" onclick="triggerToast('พิมพ์บัตรที่นั่งเรียบร้อย'); closeDetailsModal();" type="button">
+        พิมพ์บัตรที่นั่ง (Re-Print Seat Slip)
+      </button>
+<button class="px-5 py-2.5 bg-surface-container-high text-on-surface font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.16em] rounded hover:bg-surface-container-highest transition-all" onclick="closeDetailsModal()" type="button">
+        ปิด (Close)
+      </button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-8 bg-surface-container-highest text-on-surface px-5 py-3 rounded-lg shadow-2xl z-50 flex items-center gap-3 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 border border-outline-variant/40" id="toastNotification">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md" id="toastMessage">Action completed successfully.</span>
+</div>
+</div>
+<script>
+  (function initAttendeeReport() {
+    const searchInput = document.getElementById('attendeeSearch');
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const typeFilter = document.getElementById('typeFilter');
+    const resetBtn = document.getElementById('resetFilterBtn');
+    const tableBody = document.getElementById('attendeeTableBody');
+    const filteredCount = document.getElementById('filteredCount');
+
+    function applyFilters() {
+      const searchTerm = (searchInput.value || '').toLowerCase().trim();
+      const selectedType = typeFilter.value;
+
+      if (searchTerm.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+
+      const rows = tableBody.querySelectorAll('tr');
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const guestData = (row.getAttribute('data-guest') || '').toLowerCase();
+        const type = row.getAttribute('data-type');
+
+        const matchesSearch = !searchTerm || guestData.includes(searchTerm);
+        const matchesType = selectedType === 'ALL' || type === selectedType;
+
+        if (matchesSearch && matchesType) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      if (filteredCount) {
+        filteredCount.textContent = `แสดง ${visibleCount} รายชื่อที่เช็คอินแล้ว`;
+      }
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    typeFilter.addEventListener('change', applyFilters);
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      applyFilters();
+      searchInput.focus();
+    });
+
+    resetBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      typeFilter.value = 'ALL';
+      applyFilters();
+      triggerToast('รีเซ็ตตัวกรองเรียบร้อยแล้ว');
+    });
+  })();
+
+  function openDetailsModal(name, org, type, time, gate, seat, phone) {
+    document.getElementById('detailModalName').textContent = name;
+    document.getElementById('detailModalOrg').textContent = org;
+    document.getElementById('detailModalType').textContent = type;
+    document.getElementById('detailModalTime').textContent = time;
+    document.getElementById('detailModalGate').textContent = gate;
+    document.getElementById('detailModalSeat').textContent = seat;
+    document.getElementById('detailModalPhone').textContent = phone;
+    document.getElementById('detailsModal').classList.remove('hidden');
+  }
+
+  function closeDetailsModal() {
+    document.getElementById('detailsModal').classList.add('hidden');
+  }
+
+  function triggerToast(message) {
+    const toast = document.getElementById('toastNotification');
+    const text = document.getElementById('toastMessage');
+    text.textContent = message;
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    }, 2800);
+  }
+</script></main></div>
+
+</body></html>

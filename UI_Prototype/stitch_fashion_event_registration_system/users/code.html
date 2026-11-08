@@ -1,0 +1,589 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-highest":"#353438","surface-bright":"#39393c","primary-container":"#d4af37","on-secondary-fixed":"#261900","error":"#ffb4ab","on-primary":"#3c2f00","on-tertiary-fixed-variant":"#464745","surface":"#131316","on-secondary-container":"#dab36a","on-primary-fixed":"#241a00","surface-container-low":"#1b1b1e","on-primary-fixed-variant":"#574500","inverse-surface":"#e5e1e6","tertiary-fixed":"#e3e2e0","tertiary-container":"#b3b3b0","on-error":"#690005","on-tertiary-fixed":"#1a1c1a","on-primary-container":"#554300","on-surface":"#e5e1e6","tertiary-fixed-dim":"#c7c6c4","on-error-container":"#ffdad6","surface-variant":"#353438","inverse-primary":"#735c00","background":"#131316","primary-fixed":"#ffe088","secondary-fixed":"#ffdea5","tertiary":"#cfcecc","surface-tint":"#e9c349","on-secondary-fixed-variant":"#5d4201","secondary-fixed-dim":"#e9c176","secondary-container":"#604403","primary-fixed-dim":"#e9c349","surface-container-high":"#2a2a2d","error-container":"#93000a","secondary":"#e9c176","on-tertiary-container":"#444543","on-secondary":"#412d00","surface-container-lowest":"#0e0e11","on-surface-variant":"#d0c5af","on-tertiary":"#2f312f","on-background":"#e5e1e6","outline-variant":"#4d4635","surface-container":"#1f1f22","inverse-on-surface":"#303033","primary":"#f2ca50","outline":"#99907c","surface-dim":"#131316"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xs":"0.25rem","space-sm":"0.5rem","margin":"3rem","space-xl":"2.5rem","margin-mobile":"1.25rem","gutter":"1.5rem","gutter-mobile":"0.75rem","space-lg":"1.5rem","space-md":"1rem"},fontFamily:{"headline-md":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"display-hero":["Playfair Display"],"body-md":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"headline-lg":["Playfair Display"],"display-hero-mobile":["Playfair Display"],"title-editorial":["Playfair Display"],"label-caps-editorial":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"mono-data":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"headline-md":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"500"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"400"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0.01em",fontWeight:"400"}],"headline-sm":["22px",{lineHeight:"30px",letterSpacing:"0.01em",fontWeight:"600"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.015em",fontWeight:"400"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"400"}],"title-editorial":["18px",{lineHeight:"26px",letterSpacing:"0.02em",fontWeight:"500"}],"label-caps-editorial":["11px",{lineHeight:"14px",letterSpacing:"0.14em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"0.01em",fontWeight:"300"}],"mono-data":["12px",{lineHeight:"16px",letterSpacing:"0.08em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between py-6 shadow-[1px_0_0_0_rgba(212,175,55,0.08)]"><div class="flex flex-col"><div class="px-6 pb-6"><div class="font-headline-sm text-headline-sm tracking-wider uppercase text-primary">L'ÉTOILE</div><div class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.2em] text-on-surface-variant mt-1">Haute Couture Management</div></div><div class="px-6 py-2"><div class="font-label-caps-editorial text-label-caps-editorial text-outline uppercase tracking-[0.16em] mb-3">Main Portal</div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="executive-overview" href="#"><span class="material-symbols-outlined text-[19px]">dashboard</span><span class="font-label-md text-label-md tracking-wide">Executive Overview</span></a></nav></div><div class="px-6 py-3"><div class="font-label-caps-editorial text-label-caps-editorial text-outline uppercase tracking-[0.16em] mb-3">Reports</div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="register-report" href="#"><span class="material-symbols-outlined text-[19px]">assignment</span><span class="font-label-md text-label-md tracking-wide">Register Report</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="attendee-report" href="#"><span class="material-symbols-outlined text-[19px]">groups</span><span class="font-label-md text-label-md tracking-wide">Attendee Report</span></a></nav></div><div class="px-6 py-3"><div class="font-label-caps-editorial text-label-caps-editorial text-outline uppercase tracking-[0.16em] mb-3">Control Center</div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="logs" href="#"><span class="material-symbols-outlined text-[19px]">receipt_long</span><span class="font-label-md text-label-md tracking-wide">Logs</span></a><a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded transition-all bg-surface-container-high text-primary font-bold" data-path="users" href="#"><span class="material-symbols-outlined text-[19px]">manage_accounts</span><span class="font-label-md text-label-md tracking-wide">Users</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="on-off-event" href="#"><span class="material-symbols-outlined text-[19px]">toggle_on</span><span class="font-label-md text-label-md tracking-wide">On-Off Event</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="import-register" href="#"><span class="material-symbols-outlined text-[19px]">upload_file</span><span class="font-label-md text-label-md tracking-wide">Import Register</span></a></nav></div></div><div class="px-6 pt-4"><div class="pt-2 text-center font-mono-data text-[10px] text-outline/60 tracking-wider">Copyright © 2026 IN ZENITH. All rights reserved.</div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 flex items-center justify-between px-8 shadow-[0_1px_0_0_rgba(212,175,55,0.12)]"><div class="flex items-center gap-5"><div class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high shadow-[inset_0_0_0_1px_rgba(212,175,55,0.3)]"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-caps-editorial text-label-caps-editorial tracking-wider text-primary">EVENT STATUS: LIVE / OPEN</span></div></div><div class="flex items-center gap-4"><div class="h-5 w-px bg-surface-container-highest"></div><div class="flex items-center gap-3 pl-1"><div class="text-right"><div class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Eleonore Vance</div><div class="font-label-caps-editorial text-label-caps-editorial uppercase text-on-surface-variant tracking-wider leading-tight">Directeur Backstage</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><button class="text-outline hover:text-error transition-colors p-1" title="Logout" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></header><main class="w-full pt-16 bg-surface px-8 min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Top Breadcrumb & Status Ribbon -->
+<div class="flex items-center justify-between py-6"><div class="flex flex-col gap-1"><div class="flex items-center gap-2 text-outline"><span class="font-label-caps-editorial text-label-caps-editorial tracking-[0.2em] uppercase text-outline">Control Center</span><span class="material-symbols-outlined text-[12px] text-outline-variant">chevron_right</span><span class="font-label-caps-editorial text-label-caps-editorial tracking-[0.2em] uppercase text-secondary">Users</span></div><div class="flex items-baseline gap-4 mt-1"><h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">System Users</h1><span class="font-body-md text-body-md text-on-surface-variant font-light">จัดการผู้ใช้งานและสิทธิ์เจ้าหน้าที่</span></div></div><div class="flex items-center gap-3"><button class="px-4 py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.14em] transition-all flex items-center gap-2 rounded shadow-sm hover:text-primary" title="Export Users CSV"><span class="material-symbols-outlined text-[18px]">download</span><span class="">Export (ส่งออกข้อมูล)</span></button><button class="px-5 py-2.5 bg-primary hover:bg-primary-container text-on-primary font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.16em] transition-all flex items-center gap-2 rounded shadow-lg shadow-primary/10" onclick="document.getElementById('createUserModal').classList.remove('hidden')"><span class="material-symbols-outlined text-[18px]">person_add</span><span class="">+ Add New User (เพิ่มผู้ใช้งานใหม่)</span></button></div></div>
+<!-- Key Metrics / Summary Grid -->
+
+<!-- Editorial Search & Filtration Bar -->
+<div class="bg-surface-container-low p-4 rounded mb-6 flex flex-col lg:flex-row items-center justify-between gap-4">
+<div class="flex-1 w-full flex items-center gap-3 bg-surface-container px-4 py-2.5 rounded">
+<span class="material-symbols-outlined text-outline text-[20px]">search</span>
+<input class="bg-transparent border-none outline-none font-body-md text-body-md text-on-surface placeholder:text-outline w-full focus:ring-0" id="userSearchInput" placeholder="Search by name, email, terminal identifier or badge clearance..." type="text">
+<kbd class="font-mono-data text-[10px] bg-surface-container-highest text-secondary px-2 py-0.5 rounded">⌘ /</kbd>
+</div>
+<div class="flex items-center gap-3 w-full lg:w-auto overflow-x-auto pb-1 lg:pb-0">
+<div class="flex items-center gap-2 bg-surface-container px-3 py-2 rounded">
+<span class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider text-outline">Role:</span>
+<select class="bg-transparent text-on-surface font-mono-data text-mono-data border-none outline-none cursor-pointer focus:ring-0 pr-4">
+<option class="bg-surface-container-high text-on-surface" value="all">All Staff Tiers (18)</option>
+<option class="bg-surface-container-high text-on-surface" value="super-admin">Super Admin (Root Atelier)</option>
+<option class="bg-surface-container-high text-on-surface" value="director">Backstage &amp; Event Director</option>
+<option class="bg-surface-container-high text-on-surface" value="scanner">Gate Staff Scanner</option>
+<option class="bg-surface-container-high text-on-surface" value="concierge">VIP Concierge / Press</option>
+</select>
+</div>
+<div class="flex items-center gap-2 bg-surface-container px-3 py-2 rounded">
+<span class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider text-outline">Status:</span>
+<select class="bg-transparent text-on-surface font-mono-data text-mono-data border-none outline-none cursor-pointer focus:ring-0 pr-4">
+<option class="bg-surface-container-high text-on-surface" value="all">All States</option>
+<option class="bg-surface-container-high text-on-surface" value="active">Online Scanning (12)</option>
+<option class="bg-surface-container-high text-on-surface" value="idle">Idle Authenticated (4)</option>
+<option class="bg-surface-container-high text-on-surface" value="offline">Revoked / Suspended (2)</option>
+</select>
+</div>
+<button class="p-2.5 bg-surface-container hover:bg-surface-container-high text-outline hover:text-on-surface rounded transition-colors" title="Export Access Audit CSV">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-2.5 bg-surface-container hover:bg-surface-container-high text-outline hover:text-on-surface rounded transition-colors" title="Refresh Sessions">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Personnel Matrix Table -->
+<div class="w-full bg-surface-container-lowest rounded overflow-hidden shadow-2xl">
+<!-- Table Head -->
+<div class="grid grid-cols-12 px-6 py-3.5 bg-surface-container-low text-outline font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.16em] items-center">
+<div class="col-span-4">Staff Identity &amp; Title</div>
+<div class="col-span-2">Role Classification</div>
+<div class="col-span-2">Station / Terminal Hardware</div>
+<div class="col-span-1">Clearance</div>
+<div class="col-span-1">Telemetry</div>
+<div class="col-span-2 text-right">Operational Actions</div>
+</div>
+<!-- Table Rows -->
+<div class="flex flex-col">
+<!-- User 1: Super Admin Vance -->
+<div class="grid grid-cols-12 px-6 py-4 items-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors duration-150">
+<div class="col-span-4 flex items-center gap-3.5">
+<div class="relative w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up editorial portrait of an elegant French female creative director with sleek dark hair in dramatic low key chiaroscuro studio lighting wearing a structured black velvet collar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz24rAvwOWxjBmOmmngdc7Zl4QXm-MyU9NzGuusoc6NyIeIJhMl9oyep8jIIYWx3Tu50kjTP79OgkLUJ3aUBdcoJOLKQPqKono5NZEvFfo8R6JeFgyFcwR0byuvqqZowaVamTP-_iUMdkVYTmZ4p-jJ1OxU_JsV5GD68RLm1aZZ44emSOY5YyxYBTL3XJHCP3iTJpEYFTxHlQZZbbcmzeSlWKBALZCazKDs2jqJZcm">
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold truncate">Eleonore Vance</span>
+<span class="font-mono-data text-[10px] text-primary bg-primary/10 px-1.5 py-0.2 rounded uppercase">Self</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">eleonore.vance@etoile-couture.fr</span>
+<span class="text-[10px] text-outline">•</span>
+<span class="font-body-sm text-body-sm text-outline truncate">ผู้อำนวยการจัดงานเบื้องหลัง</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 flex flex-col">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-primary text-on-primary font-label-caps-editorial text-label-caps-editorial tracking-wider w-fit">
+<span class="material-symbols-outlined text-[13px]">shield_person</span>
+            SUPER ADMIN
+          </span>
+<span class="font-mono-data text-[11px] text-on-surface-variant mt-1">Full Atelier Clearance</span>
+</div>
+<div class="col-span-2 flex flex-col">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">laptop_mac</span>
+<span class="font-body-md text-body-md">Central Command Unit</span>
+</div>
+<span class="font-mono-data text-mono-data text-outline">MAC-SEC-01 (M3 Max Enclave)</span>
+</div>
+<div class="col-span-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono-data text-mono-data">TIER 1</span>
+</div>
+<div class="col-span-1 flex flex-col">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-mono-data text-mono-data">NOW</span>
+</div>
+<span class="font-label-caps-editorial text-[10px] text-outline tracking-wider">Passkey Active</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors font-mono-data text-mono-data flex items-center gap-1" onclick="openPermissionModal('Eleonore Vance', 'Super Admin (Root Atelier)')" title="Matrix">
+<span class="material-symbols-outlined text-[16px]">lock_reset</span>
+<span class="">Perms</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors" title="Manage Keypair">
+<span class="material-symbols-outlined text-[18px]">vpn_key</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-error transition-colors" title="Revoke Session">
+<span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+</button>
+</div>
+</div>
+<!-- User 2: Front Row Concierge Director -->
+<div class="grid grid-cols-12 px-6 py-4 items-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors duration-150">
+<div class="col-span-4 flex items-center gap-3.5">
+<div class="relative w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Chic and composed portrait of a luxury event director, sharp side profile in tailored tuxedo with gold lapel pin under soft gallery spotlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAIYEEZ8oEgpShZ7AkYmL1qsAtqD6c8dXBeviEMYAZUJyWhzgSeIOp9jbMXA-ffjeNxyPBm56wUZnuysRkilaiMniaPuL8xedNn6Kh67OMCz4f55Ll_68eBXNcO1OPJDVKSDyu0dt2Pehp5aC3fGqRPIGRrzJ431Woa6aXXVqhFjZWuvCeseQ18y_bP-4G5qaGK1pLPn-b4L855UStgMJTTnKsazkDUATv72hxaUdk">
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold truncate">Somchai Kittisak</span>
+<span class="font-mono-data text-[10px] text-secondary">#DIR-009</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">somchai.k@etoile-couture.fr</span>
+<span class="text-[10px] text-outline">•</span>
+<span class="font-body-sm text-body-sm text-outline truncate">หัวหน้าฝ่ายต้อนรับแขกวีไอพี</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 flex flex-col">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-caps-editorial text-label-caps-editorial tracking-wider w-fit">
+<span class="material-symbols-outlined text-[13px]">stars</span>
+            VIP DIRECTOR
+          </span>
+<span class="font-mono-data text-[11px] text-on-surface-variant mt-1">Front Row &amp; Press Lounge</span>
+</div>
+<div class="col-span-2 flex flex-col">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">tablet</span>
+<span class="font-body-md text-body-md">VIP Lounge • Front Row</span>
+</div>
+<span class="font-mono-data text-mono-data text-outline">iPad Pro 13" • VIP-TAB-01</span>
+</div>
+<div class="col-span-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-mono-data text-mono-data">TIER 2</span>
+</div>
+<div class="col-span-1 flex flex-col">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-mono-data text-mono-data">SCANNING</span>
+</div>
+<span class="font-label-caps-editorial text-[10px] text-outline tracking-wider">3s ago • Gate A</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors font-mono-data text-mono-data flex items-center gap-1" onclick="openPermissionModal('Somchai Kittisak', 'VIP Director (Front Row &amp; Press)')" title="Matrix">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="">Perms</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors" title="Re-assign Terminal">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-error transition-colors" title="Revoke Session">
+<span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+</button>
+</div>
+</div>
+<!-- User 3: Scanner Lead Gate A -->
+<div class="grid grid-cols-12 px-6 py-4 items-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors duration-150">
+<div class="col-span-4 flex items-center gap-3.5">
+<div class="relative w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Monochrome contrast portrait of an attentive young Asian female stage manager in minimalist black uniform with communication headset." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGF10aW0ft6tYECnTKv9x1yDc4lTRuUah5Sk2CnnAjun8y_VDBosPAxBCZmJZ3ikOnIhNndezmY3TuemVQHNhbIvM6EGAdxlN8p3OfFSdtJaPCp1VUf2Sf6HySZJOj1gAgn5EcF1xXqUifD-zy_dZ5A6v4SDEyUGy3a2IhluuuFbkWmoujGZqfhKFVCcGkNAtwVQx28NAvDSNpKdgxx1Y1Ek-uLk9gpYe6OciPWs2B">
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold truncate">Nattaya Chaisiri</span>
+<span class="font-mono-data text-[10px] text-outline">#STF-042</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">nattaya.c@etoile-couture.fr</span>
+<span class="text-[10px] text-outline">•</span>
+<span class="font-body-sm text-body-sm text-outline truncate">เจ้าหน้าที่จุดคัดกรอง ประตู A</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 flex flex-col">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-caps-editorial text-label-caps-editorial tracking-wider w-fit">
+<span class="material-symbols-outlined text-[13px]">qr_code_scanner</span>
+            GATE SCANNER
+          </span>
+<span class="font-mono-data text-[11px] text-on-surface-variant mt-1">Optic Ticket Ingestion</span>
+</div>
+<div class="col-span-2 flex flex-col">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">qr_code_2</span>
+<span class="font-body-md text-body-md">Gate A • Grand Foyer</span>
+</div>
+<span class="font-mono-data text-mono-data text-outline">iPad Air • STF-SCN-042</span>
+</div>
+<div class="col-span-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-outline font-mono-data text-mono-data">TIER 2</span>
+</div>
+<div class="col-span-1 flex flex-col">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-mono-data text-mono-data">ONLINE</span>
+</div>
+<span class="font-label-caps-editorial text-[10px] text-outline tracking-wider">12s ago • Active</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors font-mono-data text-mono-data flex items-center gap-1" onclick="openPermissionModal('Nattaya Chaisiri', 'Gate Scanner (Gate A - Grand Foyer)')" title="Matrix">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="">Perms</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors" title="Remote Lock Device">
+<span class="material-symbols-outlined text-[18px]">screen_lock_portrait</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-error transition-colors" title="Revoke Session">
+<span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+</button>
+</div>
+</div>
+<!-- User 4: Gate B Scanner Staff -->
+<div class="grid grid-cols-12 px-6 py-4 items-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors duration-150">
+<div class="col-span-4 flex items-center gap-3.5">
+<div class="relative w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Sophisticated male model backstage assistant wearing black turtleneck with sharp jawline and focused professional gaze." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3uemKNz4Hezo78LkLqqKAVUSATZxPH5A3wmlpjx7rcA7kqEeCLb55kxguS1hmCCuDerIt2E3ncVP4HNb3VTaF-h13le-GkPdTnBxdZYOkTe9Mg17L72fjFDROvJVSqjS97HrKN6oX0OBqpgSwDyAcGiqmsiw89KmuBBCm015Locivgnn8A5JYA9rWn0fdXwlv8BIvtlnfJ6SGzZ0fC_Cm1wJZlv9TOMxQfgiI_asd">
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold truncate">Antoine Laurent</span>
+<span class="font-mono-data text-[10px] text-outline">#STF-088</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">antoine.l@etoile-couture.fr</span>
+<span class="text-[10px] text-outline">•</span>
+<span class="font-body-sm text-body-sm text-outline truncate">เจ้าหน้าที่จุดสแกน ประตู B</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 flex flex-col">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-caps-editorial text-label-caps-editorial tracking-wider w-fit">
+<span class="material-symbols-outlined text-[13px]">qr_code_scanner</span>
+            GATE SCANNER
+          </span>
+<span class="font-mono-data text-[11px] text-on-surface-variant mt-1">Press &amp; Buyer Entry</span>
+</div>
+<div class="col-span-2 flex flex-col">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">qr_code_2</span>
+<span class="font-body-md text-body-md">Gate B • Couronne Wing</span>
+</div>
+<span class="font-mono-data text-mono-data text-outline">iPad Mini • STF-SCN-088</span>
+</div>
+<div class="col-span-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-outline font-mono-data text-mono-data">TIER 2</span>
+</div>
+<div class="col-span-1 flex flex-col">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-mono-data text-mono-data">STANDBY</span>
+</div>
+<span class="font-label-caps-editorial text-[10px] text-outline tracking-wider">1m ago • Gate B</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors font-mono-data text-mono-data flex items-center gap-1" onclick="openPermissionModal('Antoine Laurent', 'Gate Scanner (Gate B - Couronne)')" title="Matrix">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="">Perms</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors" title="Remote Lock Device">
+<span class="material-symbols-outlined text-[18px]">screen_lock_portrait</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-error transition-colors" title="Revoke Session">
+<span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+</button>
+</div>
+</div>
+<!-- User 5: Compliance Auditor (Tier 3) -->
+<div class="grid grid-cols-12 px-6 py-4 items-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors duration-150">
+<div class="col-span-4 flex items-center gap-3.5">
+<div class="relative w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Senior auditor in bespoke dark navy blazer with horn-rimmed spectacles examining digital tablet in high fashion house archive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCimO0OGVgbce3kON78FPqT6CZJjnqb6DEZR1FruOPSH3-cL0ra7AEuKEiLzip0ijBlaRG9YIFZKBiURQUert5PRPzIiy5DGcnJGnr3PUkVDzvvBI0yCFIyYGEnUs31-sNw8ORlxHkDE8czoIhWc8W1NmHuxTF7_Rkk22xTPrXXcK7U8qPlxUmrqExoSD3zzuB7-KNqkVdqZJWa3faMFF9hnwqp-54HhHzXGblOS9xX">
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-outline rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold truncate">Dr. Paul Montmartre</span>
+<span class="font-mono-data text-[10px] text-outline">#AUD-003</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">paul.montmartre@federation-couture.org</span>
+<span class="text-[10px] text-outline">•</span>
+<span class="font-body-sm text-body-sm text-outline truncate">ผู้ตรวจสอบสิทธิภายนอก</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 flex flex-col">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-highest text-outline font-label-caps-editorial text-label-caps-editorial tracking-wider w-fit">
+<span class="material-symbols-outlined text-[13px]">policy</span>
+            LEGAL AUDITOR
+          </span>
+<span class="font-mono-data text-[11px] text-on-surface-variant mt-1">Read-Only Oversight</span>
+</div>
+<div class="col-span-2 flex flex-col">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-outline text-[16px]">visibility</span>
+<span class="font-body-md text-body-md">External Audit Tunnel</span>
+</div>
+<span class="font-mono-data text-mono-data text-outline">TLS 1.3 / Airgapped Node</span>
+</div>
+<div class="col-span-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-outline-variant font-mono-data text-mono-data">TIER 3</span>
+</div>
+<div class="col-span-1 flex flex-col">
+<div class="flex items-center gap-1.5 text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span class="font-mono-data text-mono-data">IDLE</span>
+</div>
+<span class="font-label-caps-editorial text-[10px] text-outline tracking-wider">18m ago</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors font-mono-data text-mono-data flex items-center gap-1" onclick="openPermissionModal('Dr. Paul Montmartre', 'Legal Auditor (External Federation)')" title="Matrix">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="">Perms</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors" title="View Audit Logs">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-error transition-colors" title="Revoke Session">
+<span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+</button>
+</div>
+</div>
+<!-- User 6: Suspended Staff Pass -->
+<div class="grid grid-cols-12 px-6 py-4 items-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors duration-150 opacity-60">
+<div class="col-span-4 flex items-center gap-3.5">
+<div class="relative w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0 grayscale">
+<img class="w-full h-full object-cover" data-alt="Monochrome mood shot of a male staff crew member standing in dim backstage venue corridor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAha3PBBpCurmLwZR8brrhqfF3W9ha2VyqjRJ5nq9rQvstBwA1eHYdvxy1bGmVGvDXedHXzGLWB3_2ctEHRCiqzsVuw-7GL0j56h7gVFhkRLrhT60iZ1nZsKXHOfp5CMssbInCEEcKS73nhoM-gtwpM7vkKsWzwsV0nbfPe4gkfqv5Rr2cLevlKR10QJZ0ztv79k6Gxtqn-Vvch12X3s4r2FG7BU_QQjixgrsAyE98p">
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold truncate line-through">Jirayu Pongsak</span>
+<span class="font-mono-data text-[10px] text-error">SUSPENDED</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-body-sm text-body-sm text-outline truncate">jirayu.p@etoile-couture.fr</span>
+<span class="text-[10px] text-outline">•</span>
+<span class="font-body-sm text-body-sm text-outline truncate">ระงับสิทธิ์ชั่วคราว</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 flex flex-col">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-error-container text-on-error-container font-label-caps-editorial text-label-caps-editorial tracking-wider w-fit">
+<span class="material-symbols-outlined text-[13px]">block</span>
+            REVOKED
+          </span>
+<span class="font-mono-data text-[11px] text-error mt-1">Terminal De-authenticated</span>
+</div>
+<div class="col-span-2 flex flex-col">
+<div class="flex items-center gap-1.5 text-outline">
+<span class="material-symbols-outlined text-outline text-[16px]">no_encryption</span>
+<span class="font-body-md text-body-md">Device STF-019 (Wiped)</span>
+</div>
+<span class="font-mono-data text-mono-data text-outline">Hardware Key Nullified</span>
+</div>
+<div class="col-span-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-outline-variant font-mono-data text-mono-data">N/A</span>
+</div>
+<div class="col-span-1 flex flex-col">
+<div class="flex items-center gap-1.5 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span class="font-mono-data text-mono-data">LOCKED</span>
+</div>
+<span class="font-label-caps-editorial text-[10px] text-outline tracking-wider">By E. Vance</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-1.5">
+<button class="px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-primary hover:text-primary-fixed transition-colors font-mono-data text-mono-data flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span class="">Re-instate</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-6 py-4 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="font-mono-data text-mono-data text-outline">Showing 6 of 18 Authorized House Personnel</span>
+<span class="text-outline">•</span>
+<span class="font-label-caps-editorial text-[10px] text-secondary tracking-widest uppercase">FIPS 140-3 LEVEL 3 COMPLIANT</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded bg-surface-container text-outline hover:text-on-surface font-mono-data text-mono-data text-[12px] transition-colors disabled:opacity-30" disabled="">
+          PREV
+        </button>
+<span class="px-3 py-1.5 rounded bg-primary text-on-primary font-mono-data text-mono-data text-[12px] font-bold">1</span>
+<button class="px-3 py-1.5 rounded bg-surface-container text-outline hover:text-on-surface font-mono-data text-mono-data text-[12px] transition-colors">2</button>
+<button class="px-3 py-1.5 rounded bg-surface-container text-outline hover:text-on-surface font-mono-data text-mono-data text-[12px] transition-colors">3</button>
+<button class="px-3 py-1.5 rounded bg-surface-container text-outline hover:text-on-surface font-mono-data text-mono-data text-[12px] transition-colors">
+          NEXT
+        </button>
+</div>
+</div>
+</div>
+<!-- Operational Terminal Health & Live Scanning Stations Strip -->
+
+<!-- Modal: Add New Staff Member (Hidden by default, triggered via JS) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-surface-container-lowest/80 backdrop-blur-md p-4" id="createUserModal">
+<div class="bg-surface-container-low rounded max-w-2xl w-full p-8 shadow-2xl overflow-y-auto max-h-[921px]">
+<div class="flex items-start justify-between pb-4">
+<div>
+<span class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.2em] text-primary">PERSONNEL ENROLLMENT</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1">Create Staff &amp; Terminal Account</h2>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">เพิ่มผู้ใช้งานใหม่และกำหนดเครื่องสแกนประจำจุด</p>
+</div>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" onclick="document.getElementById('createUserModal').classList.add('hidden')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-5 mt-6" onsubmit="event.preventDefault(); document.getElementById('createUserModal').classList.add('hidden');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider text-outline">Full Name (English)</label>
+<input class="bg-surface-container px-3.5 py-2.5 rounded font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="e.g. Marc Jacobs" required="" type="text">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider text-outline">Full Name &amp; Title (Thai)</label>
+<input class="bg-surface-container px-3.5 py-2.5 rounded font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="e.g. นายมาร์ค เจคอบส์" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider text-outline">Official Maison Email</label>
+<input class="bg-surface-container px-3.5 py-2.5 rounded font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="staff.name@etoile-couture.fr" required="" type="email">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider text-outline">Clearance Tier</label>
+<select class="bg-surface-container px-3.5 py-2.5 rounded font-body-md text-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary">
+<option value="tier-2">Tier 2 — Gate Operations &amp; VIP Scanner</option>
+<option value="tier-1">Tier 1 — Root Atelier Super Admin</option>
+<option value="tier-3">Tier 3 — Compliance &amp; Auditor (Read-Only)</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider text-outline">Role Classification</label>
+<select class="bg-surface-container px-3.5 py-2.5 rounded font-body-md text-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary">
+<option value="scanner">Gate Staff Scanner (เจ้าหน้าที่สแกนบัตร)</option>
+<option value="director">Event Director (ผู้ดูแลระบบการจัดงาน)</option>
+<option value="concierge">VIP Concierge / Press Host</option>
+<option value="admin">Super Administrator</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider text-outline">Assigned Gate / Station</label>
+<select class="bg-surface-container px-3.5 py-2.5 rounded font-body-md text-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary">
+<option value="gate-a">Gate A — Grand Foyer (Main Public)</option>
+<option value="gate-b">Gate B — Rotonde (Press &amp; Buyers)</option>
+<option value="gate-vip">Gate VIP — Salon Vendôme</option>
+<option value="backstage">Coulisses • Backstage Dressing Area</option>
+<option value="command">Central Command Headquarters</option>
+</select>
+</div>
+</div>
+<!-- Permissions Matrix Checkboxes -->
+<div class="pt-2">
+<label class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider text-outline mb-2 block">Granular Authorization Matrix</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 bg-surface-container p-4 rounded">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="accent-primary rounded w-4 h-4" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface">Scan &amp; Ingest Guest QR Passes</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="accent-primary rounded w-4 h-4" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface">Override Seat Re-allocations</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="accent-primary rounded w-4 h-4" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface">Export Attendee Contact Roster</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="accent-primary rounded w-4 h-4" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface">Offline Cached Ticket Validation</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="accent-primary rounded w-4 h-4" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface">Backstage Pass Revocation Authority</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="accent-primary rounded w-4 h-4" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface">Clearance Tier Elevation</span>
+</label>
+</div>
+</div>
+<!-- Hardware Key Provisioning Toggle -->
+<div class="flex items-center justify-between p-3.5 rounded bg-surface-container">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">security_update_good</span>
+<div class="flex flex-col">
+<span class="font-title-editorial text-[14px] text-on-surface">Send Passkey Enrollment Invitation</span>
+<span class="font-body-sm text-body-sm text-outline">Recipient receives cryptographic FIDO2 link via encrypted SMS</span>
+</div>
+</div>
+<input checked="" class="accent-primary w-5 h-5 rounded" type="checkbox">
+</div>
+<div class="flex items-center justify-end gap-3 pt-4">
+<button class="px-5 py-2.5 rounded bg-surface-container text-outline hover:text-on-surface font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider transition-colors" onclick="document.getElementById('createUserModal').classList.add('hidden')" type="button">
+            Cancel
+          </button>
+<button class="px-6 py-2.5 bg-primary hover:bg-primary-container text-on-primary font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.16em] transition-all rounded-none shadow-md" type="submit">
+            Issue Credentials &amp; Deploy
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Modal: Inspect Permissions Matrix -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-surface-container-lowest/80 backdrop-blur-md p-4" id="permissionsModal">
+<div class="bg-surface-container-low rounded max-w-lg w-full p-6 shadow-2xl">
+<div class="flex items-start justify-between pb-3">
+<div>
+<span class="font-label-caps-editorial text-label-caps-editorial uppercase tracking-[0.2em] text-secondary">SECURITY CLEARANCE PROFILE</span>
+<h3 class="font-title-editorial text-title-editorial text-on-surface mt-1 font-semibold" id="modalUserName">User Permissions</h3>
+<p class="font-mono-data text-mono-data text-primary mt-0.5" id="modalUserRole">Role Matrix</p>
+</div>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container" onclick="document.getElementById('permissionsModal').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="my-4 space-y-2.5">
+<div class="flex items-center justify-between p-2.5 bg-surface-container rounded">
+<span class="font-body-md text-body-md text-on-surface">Guest Check-In Scanner (QR/NFC)</span>
+<span class="font-mono-data text-primary text-[12px]">AUTHORIZED</span>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-surface-container rounded">
+<span class="font-body-md text-body-md text-on-surface">Seating Plan Realtime Relocation</span>
+<span class="font-mono-data text-secondary text-[12px]">ELEVATED ONLY</span>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-surface-container rounded">
+<span class="font-body-md text-body-md text-on-surface">VIP Contact Roster Decryption</span>
+<span class="font-mono-data text-error text-[12px]">RESTRICTED</span>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-surface-container rounded">
+<span class="font-body-md text-body-md text-on-surface">Emergency Stage Lockdown Signal</span>
+<span class="font-mono-data text-primary text-[12px]">AUTHORIZED</span>
+</div>
+</div>
+<div class="pt-3 flex justify-end">
+<button class="px-4 py-2 bg-primary text-on-primary font-label-caps-editorial text-label-caps-editorial uppercase tracking-wider rounded-none" onclick="document.getElementById('permissionsModal').classList.add('hidden')">
+          Done
+        </button>
+</div>
+</div>
+</div>
+<script>
+    function openPermissionModal(name, role) {
+      document.getElementById('modalUserName').innerText = name;
+      document.getElementById('modalUserRole').innerText = role;
+      document.getElementById('permissionsModal').classList.remove('hidden');
+    }
+
+    // Quick client search interaction
+    const searchInput = document.getElementById('userSearchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase();
+        const rows = document.querySelectorAll('.grid.grid-cols-12.px-6.py-4');
+        rows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          if (text.includes(query)) {
+            row.style.display = 'grid';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    }
+  </script>
+</div></main></div>
+
+
+
+
+
+
+
+</body></html>
