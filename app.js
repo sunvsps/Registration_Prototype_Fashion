@@ -1,31 +1,402 @@
-const eventInfo = { name: "L'ÉTOILE Fashion Week", date: "24 October 2026", time: "18:30 — 22:00", venue: "The Glass House, Bangkok", capacity: 450 };
+const eventInfo = {
+  name: "L'ÉTOILE Fashion Week",
+  date: "24 October 2026",
+  time: "18:30 — 22:00",
+  venue: "The Glass House, Bangkok",
+  capacity: 450,
+};
 const seed = [
-  {id:'LET-26001',first:'Ananda',last:'Srisuk',phone:'081-234-5678',email:'ananda@example.com',source:'Website',checked:true,created:'08 Nov 2026, 10:31'},
-  {id:'LET-26002',first:'Pimchanok',last:'Rattanakul',phone:'089-112-3344',email:'pim@example.com',source:'VIP Import',checked:true,created:'08 Nov 2026, 09:58'},
-  {id:'LET-26003',first:'Krit',last:'Wongsa',phone:'086-990-1122',email:'krit@example.com',source:'Website',checked:false,created:'07 Nov 2026, 18:16'},
-  {id:'LET-26004',first:'Mali',last:'Chantarat',phone:'092-440-0901',email:'mali@example.com',source:'Website',checked:false,created:'07 Nov 2026, 15:45'}
+  {
+    id: "LET-26001",
+    first: "Ananda",
+    last: "Srisuk",
+    phone: "081-234-5678",
+    email: "ananda@example.com",
+    source: "Website",
+    checked: true,
+    created: "08 Nov 2026, 10:31",
+  },
+  {
+    id: "LET-26002",
+    first: "Pimchanok",
+    last: "Rattanakul",
+    phone: "089-112-3344",
+    email: "pim@example.com",
+    source: "VIP Import",
+    checked: true,
+    created: "08 Nov 2026, 09:58",
+  },
+  {
+    id: "LET-26003",
+    first: "Krit",
+    last: "Wongsa",
+    phone: "086-990-1122",
+    email: "krit@example.com",
+    source: "Website",
+    checked: false,
+    created: "07 Nov 2026, 18:16",
+  },
+  {
+    id: "LET-26004",
+    first: "Mali",
+    last: "Chantarat",
+    phone: "092-440-0901",
+    email: "mali@example.com",
+    source: "Website",
+    checked: false,
+    created: "07 Nov 2026, 15:45",
+  },
 ];
-const initialRoute = location.pathname.replace(/\/+$/, '');
-const state = { view: initialRoute.includes('/check-in/') || initialRoute.endsWith('/check-in') ? 'staffLogin' : initialRoute.includes('/admin/') || initialRoute.endsWith('/admin') ? 'adminLogin' : 'home', adminPage:'overview', staffUser:null, adminUser:null, modal:null, query:'', logs:[] };
-function loadGuests(){ try { return JSON.parse(localStorage.getItem('etoile-guests')) || seed } catch { return seed } }
-function guests(){ return loadGuests() } function saveGuests(list){ localStorage.setItem('etoile-guests',JSON.stringify(list)) }
-function log(action, detail){ const list=JSON.parse(localStorage.getItem('etoile-logs')||'[]'); list.unshift({action,detail,time:new Date().toLocaleString('th-TH')}); localStorage.setItem('etoile-logs',JSON.stringify(list.slice(0,40))); state.logs=list }
-function esc(t=''){ return String(t).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])) }
-function toast(text){ const x=document.querySelector('#toast'); x.textContent=text; x.classList.add('show'); setTimeout(()=>x.classList.remove('show'),2600) }
-function shell(){ document.querySelector('#app').innerHTML = state.view==='home'?home():state.view==='staffLogin'?login('staff'):state.view==='staff'?staff():state.view==='adminLogin'?login('admin'):admin(); bind() }
-function home(){ return `<main class="guest-home source-page"><header class="topbar"><a class="brand" href="./">L'ÉTOILE<small>FASHION WEEK / BANGKOK</small></a><div class="top-actions"><a class="nav-link" href="https://maps.google.com/?q=The+Glass+Pavilion+Bangkok" target="_blank">Venue &amp; Map</a><button class="nav-link" data-action="findQR">ค้นหา QR Code</button><button class="nav-link subtle" data-action="staffPortal">Staff</button><button class="nav-link subtle" data-action="adminPortal">Admin</button><a class="rsvp-link" href="#registration">RSVP Access</a></div></header><div class="source-glow"><section class="source-hero"><div class="source-copy"><div class="source-stamp"><span>L'ÉTOILE Haute Couture Runway 2026</span><i></i><small>Official RSVP</small></div><h1>The Celestial <em>Ode</em></h1><p>An intimate architectural showcase exploring star-lit drapery, molten gold embroidery, and midnight silhouettes along the Chao Phraya River.</p><div class="source-meta"><div><label>Date &amp; Time</label><b>24 October 2026</b><span>18:30 — 22:00 ICT</span></div><div><label>Venue</label><b>The Glass Pavilion</b><span>Chao Phraya, Bangkok</span></div><div><label>Dress Code</label><b>Avant-Garde Black Tie</b><span>&amp; Molten Gold Accents</span></div></div><div class="source-note">● Exclusive Salon Privé Accreditation · Limited to 450 guests</div></div><figure class="source-visual"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq6vIwtaluRnQ0dQkCpLOSuYLNhzMFRnAjsqDtH-SBx4Dq-VgvCUFgdtSAA6gfG9AyxSr4T1vm67b7tEXRh1WpfH-YFVJ_V6xwYzzWWYAeTlhN_sYtD-9YrrUHvU_k3SfBcDBW3dmrpMfch3iesDqpxioIMWFbvKPv8vV8IkMz4FxYs4dONnhawAxR7GcIk7oSJ3GcTzfk7JBTMjaLoZWqGAQ8v9DshoSxhvN3mNeG" alt="Midnight couture look" /><figcaption><span>LOOK 01 · STAGING<br><i>Astral Void Gown</i></span><small>PARIS ATELIER</small></figcaption></figure></section><section id="registration" class="source-registration"><div class="source-form-head"><span class="eyebrow">Guest accreditation desk</span><h2>ระบบลงทะเบียนเข้าร่วมงาน</h2><p>กรุณากรอกข้อมูลเพื่อรับบัตรเชิญ Digital E-Ticket และ QR Code เข้างานส่วนบุคคล</p></div><form data-form="register"><div class="form-grid"><div class="field"><label>ชื่อจริง / First Name</label><input required name="first" placeholder="เช่น ธนภัทร หรือ Charlotte" /></div><div class="field"><label>นามสกุล / Last Name</label><input required name="last" placeholder="เช่น วรโชติเมธี หรือ Laurent" /></div></div><div class="form-grid"><div class="field"><label>เบอร์โทรศัพท์ / Phone Number</label><input required name="phone" placeholder="081 234 5678" /></div><div class="field"><label>อีเมลสำหรับรับ QR Code</label><input required name="email" type="email" placeholder="guest@email.com" /></div></div><div class="field"><label>วันที่ต้องการเข้าร่วมงาน</label><select><option>24 October 2026 · Opening Night Gala</option></select></div><label class="consent"><input required type="checkbox" name="consent" /> <span>ยินยอมให้จัดเก็บและใช้ข้อมูลส่วนบุคคลตาม PDPA เพื่อการออก E-Ticket, ยืนยันสิทธิ์ที่นั่ง และอำนวยความสะดวกในการเข้าร่วมงาน</span></label><p class="delivery-note">✦ ระบบจะจัดส่งบัตร E-Ticket พร้อม QR Code และพิกัด Google Maps ให้ทางอีเมลทันทีหลังยืนยัน</p><button class="button">ยืนยันการลงทะเบียน <span>→</span></button></form></section></div></main>${modal()}` }
-function login(type){ const isStaff=type==='staff'; return `<main class="login"><section class="login-card"><div class="brand">L'ÉTOILE<small>${isStaff?'STAFF CHECK-IN':'EVENT MANAGEMENT'}</small></div><div class="eyebrow" style="margin-top:38px">Secure access</div><h1>${isStaff?'Staff sign in':'Admin portal'}</h1><p class="muted">เข้าสู่ระบบเพื่อใช้งาน ${isStaff?'จุดเช็คอินหน้างาน':'การจัดการงานอีเวนต์'}</p><form data-form="${type}Login"><div class="field"><label>Username</label><input required name="username" autocomplete="username" placeholder="Username" /></div><div class="field"><label>Password</label><input required name="password" type="password" autocomplete="current-password" placeholder="Password" /></div><button class="button" style="width:100%;margin-top:10px">Sign in →</button></form><div class="hint">Demo account<br>${isStaff?'staff / demo123':'admin / demo123'}</div><button class="button ghost" style="margin-top:18px;width:100%" data-action="home">← กลับหน้าหลัก</button></section></main>` }
-function modal(){ if(!state.modal) return ''; if(state.modal==='register') return `<div class="modal-wrap"><section class="modal"><button class="close" data-action="close">×</button><div class="eyebrow">Reserve your place</div><h2>ลงทะเบียนเข้าร่วมงาน</h2><p class="muted">กรุณากรอกรายละเอียดเพื่อรับ Digital Pass ทางอีเมล</p><form data-form="register"><div class="form-grid"><div class="field"><label>ชื่อจริง</label><input required name="first" placeholder="First name" /></div><div class="field"><label>นามสกุล</label><input required name="last" placeholder="Last name" /></div></div><div class="form-grid"><div class="field"><label>เบอร์โทรศัพท์</label><input required name="phone" placeholder="08x-xxx-xxxx" /></div><div class="field"><label>อีเมล</label><input required name="email" type="email" placeholder="you@email.com" /></div></div><label class="consent"><input required type="checkbox" name="consent" /> <span>ข้าพเจ้ายินยอมให้ L'ÉTOILE เก็บและใช้ข้อมูลส่วนบุคคลเพื่อวัตถุประสงค์ในการจัดงานและการติดต่อที่เกี่ยวข้อง</span></label><button class="button" style="width:100%">ยืนยันการลงทะเบียน →</button></form></section></div>`; if(state.modal==='findQR') return `<div class="modal-wrap"><section class="modal"><button class="close" data-action="close">×</button><div class="eyebrow">Digital pass recovery</div><h2>ค้นหา QR Code</h2><p class="muted">กรอกอีเมลหรือเบอร์โทรศัพท์ที่ใช้ลงทะเบียน</p><form data-form="findQR"><div class="field"><label>อีเมล หรือ เบอร์โทรศัพท์</label><input required name="term" placeholder="you@email.com หรือ 08x-xxx-xxxx" /></div><button class="button" style="width:100%">ค้นหาบัตรของฉัน</button></form></section></div>`; const g=state.modal; return `<div class="modal-wrap"><section class="modal confirmation"><button class="close" data-action="close">×</button><div class="eyebrow">Registration confirmed</div><h2>พบกันในค่ำคืนพิเศษ</h2><p class="muted">เราได้ส่ง QR code ไปที่ <b>${esc(g.email)}</b> แล้ว</p><div class="ticket"><span class="eyebrow">Digital invitation</span><strong>${esc(g.first)} ${esc(g.last)}</strong><div class="ticket-row"><span>${eventInfo.date}<br>${eventInfo.time}</span><span>${g.id}</span></div><div class="qr-art"></div></div><div class="modal-actions"><button class="button" data-action="calendar">+ Add to calendar</button><button class="button secondary" data-action="map">ดูแผนที่</button></div></section></div>` }
-function staff(){ const recent=guests().filter(x=>x.checked).slice(0,5); const result=state.staffResult; return `<main class="staff-shell"><header class="staff-head"><div class="brand">L'ÉTOILE<small>STAFF CHECK-IN</small></div><div><span class="status ok">● Station Online</span> <button class="button ghost" data-action="staffLogout">Sign out</button></div></header><div class="staff-main"><div class="staff-title"><div><div class="eyebrow">Arrival desk / ${eventInfo.date}</div><h1>Welcome guests with grace.</h1></div><span class="muted">${guests().filter(x=>x.checked).length} arrivals today</span></div><div class="scanner-grid"><section class="scanner"><div class="scan-box"></div><div class="scanner-note">POSITION QR CODE INSIDE THE FRAME</div></section><section class="guest-result">${result?staffCard(result):`<div class="eyebrow">Ready to scan</div><h2>Waiting for an arrival</h2><p class="muted">เปิดกล้องเพื่อสแกน QR code หรือตรวจสอบด้วยรหัสสำรอง</p>`}<form data-form="scan" class="quick-search"><input name="term" required placeholder="กรอก QR code เช่น LET-26001" /><button class="button">ตรวจสอบ</button></form><div class="recent"><div class="eyebrow" style="margin:15px 0 4px">Recent check-ins</div>${recent.length?recent.map(x=>`<div class="recent-row"><span>${esc(x.first)} ${esc(x.last)}<br><small class="muted">${x.id}</small></span><span class="status ok">Checked in</span></div>`).join(''):'<div class="empty">ยังไม่มีผู้เช็คอิน</div>'}</div></section></div></div></main>` }
-function staffCard(g){ return `<div class="eyebrow">Guest verified</div><h2>${esc(g.first)} ${esc(g.last)}</h2><p class="muted">${esc(g.email)} · ${esc(g.phone)}</p><div style="margin:20px 0"><span class="status ${g.checked?'checked':'ok'}">${g.checked?'Already checked in':'Eligible for entry'}</span></div>${g.checked?`<p class="muted">เช็คอินแล้ว — สามารถตรวจสอบข้อมูลให้แขกได้</p>`:`<button class="button" data-action="checkin" data-id="${g.id}">ยืนยัน Check-in →</button>`}` }
-function admin(){ return `<main class="admin"><aside class="sidebar"><div class="brand">L'ÉTOILE<small>HAUTE COUTURE MANAGEMENT</small></div>${[['Overview','overview'],['Reports','label'],['Register report','register'],['Attendee report','attendee'],['Control center','label'],['Activity logs','logs'],['Users','users'],['Event configuration','config'],['Import register','import']].map(([n,k])=>k==='label'?`<div class="nav-label">${n}</div>`:`<button class="nav-item ${state.adminPage===k?'active':''}" data-page="${k}">${n}</button>`).join('')}</aside><header class="admin-head"><span class="live">● EVENT STATUS: LIVE / OPEN</span><div><span class="muted">Admin</span> <button class="button ghost" data-action="adminLogout">Logout</button></div></header><section class="admin-main">${adminContent()}</section></main>` }
-function pageHead(label,title,action=''){ return `<div class="page-head"><div><div class="eyebrow">${label}</div><h1>${title}</h1></div>${action}</div>` }
-function adminContent(){ const list=guests(), checked=list.filter(g=>g.checked); if(state.adminPage==='overview') return `${pageHead('Overview · ภาพรวมระบบ','Executive overview',`<button class="button secondary" data-action="exportAll">Export report</button>`)}<div class="metric-grid"><div class="metric"><div class="eyebrow">Today’s registrations</div><div class="number">${list.filter(x=>x.created.includes('08 Nov')).length}</div><small>รายการใหม่ในวันนี้</small></div><div class="metric"><div class="eyebrow">Total registered</div><div class="number">${list.length}</div><small>${eventInfo.capacity-list.length} seats remaining</small></div><div class="metric"><div class="eyebrow">Event attendance</div><div class="number">${checked.length}</div><small>${list.length?Math.round(checked.length/list.length*100):0}% of registered guests</small></div></div><div class="split"><section class="panel"><h3>Registration capacity</h3><div style="display:flex;justify-content:space-between"><span>${list.length} registered</span><span class="gold">${eventInfo.capacity} capacity</span></div><div class="progress"><span style="width:${Math.min(100,list.length/eventInfo.capacity*100)}%"></span></div><p class="muted">ระบบจะหยุดรับลงทะเบียนโดยอัตโนมัติเมื่อครบจำนวนที่กำหนด</p></section><section class="panel"><h3>Latest activity</h3>${activities().slice(0,4).map(x=>`<div class="activity"><span>${x.action}<br><small class="muted">${x.detail}</small></span><small class="muted">${x.time}</small></div>`).join('')||'<div class="empty">ยังไม่มีการทำรายการ</div>'}</section></div>`; if(['register','attendee'].includes(state.adminPage)){ const isA=state.adminPage==='attendee', rows=(isA?checked:list).filter(filterGuest); return `${pageHead('Reports',isA?'Attendee report':'Register report',`<button class="button" data-action="export" data-type="${isA?'attendee':'register'}">Export CSV</button>`)}<div class="table-tools"><input data-search="guests" placeholder="ค้นหาด้วยชื่อ อีเมล หรือ QR code" value="${esc(state.query)}" /><button class="button ghost" data-action="clearSearch">Clear</button></div><div class="panel table-wrap"><table class="data-table"><thead><tr><th>Guest</th><th>Contact</th><th>QR Code</th><th>Source</th><th>Status</th></tr></thead><tbody>${rows.length?rows.map(g=>`<tr><td><span class="person">${esc(g.first)} ${esc(g.last)}</span></td><td>${esc(g.email)}<br><span class="muted">${esc(g.phone)}</span></td><td class="gold">${g.id}</td><td>${g.source}</td><td><span class="status ${g.checked?'ok':'wait'}">${g.checked?'Checked in':'Registered'}</span></td></tr>`).join(''):`<tr><td colspan="5" class="empty">ไม่พบรายชื่อ</td></tr>`}</tbody></table></div>` }
- if(state.adminPage==='logs'){ return `${pageHead('Control center','Activity logs')}<section class="panel">${activities().map(x=>`<div class="activity"><span><b>${esc(x.action)}</b><br><small class="muted">${esc(x.detail)}</small></span><span class="muted">${esc(x.time)}</span></div>`).join('')||'<div class="empty">ยังไม่มีการบันทึกกิจกรรม</div>'}</section>`} if(state.adminPage==='users') return `${pageHead('Control center','Users',`<button class="button" data-action="newUser">+ Add user</button>`)}<div class="panel table-wrap"><table class="data-table"><thead><tr><th>Name</th><th>Username</th><th>Role</th><th>Status</th></tr></thead><tbody><tr><td class="person">Eleonore Vance</td><td>admin</td><td>Administrator</td><td><span class="status ok">Active</span></td></tr><tr><td class="person">Ariya K.</td><td>staff</td><td>Check-in Staff</td><td><span class="status ok">Active</span></td></tr></tbody></table></div>`; if(state.adminPage==='config') return `${pageHead('Control center','Event configuration')}<section class="panel"><div class="setting-row"><div><strong>Registration status</strong><br><span class="muted">เปิดรับลงทะเบียนผ่านหน้าเว็บไซต์</span></div><button class="switch on" data-action="toggle"></button></div><div class="form-grid"><div class="field"><label>Registration opens</label><input value="01 October 2026, 09:00" /></div><div class="field"><label>Registration closes</label><input value="23 October 2026, 18:00" /></div><div class="field"><label>Guest capacity</label><input value="450" type="number" /></div><div class="field"><label>Event date</label><input value="24 October 2026" /></div></div><button class="button" data-action="saveConfig">Save configuration</button></section>`; return `${pageHead('Control center','Import register')}<section class="panel"><h3>Import guest list</h3><p class="muted">รองรับไฟล์ Excel / CSV ที่มีคอลัมน์ First Name, Last Name, Phone และ Email</p><div class="file-input"><input type="file" data-import accept=".csv,.xlsx" /><p>เลือกไฟล์รายชื่อเพื่อจำลองการนำเข้า</p></div><button class="button" data-action="importDemo">Import demo records</button></section>` }
-function activities(){ const saved=JSON.parse(localStorage.getItem('etoile-logs')||'[]'); return saved.length?saved:[{action:'System ready',detail:'Demo registration system initialized',time:'Just now'}] }
-function filterGuest(g){ const q=state.query.trim().toLowerCase(); return !q || `${g.first} ${g.last} ${g.email} ${g.phone} ${g.id}`.toLowerCase().includes(q) }
-function csv(type){ const rows=(type==='attendee'?guests().filter(x=>x.checked):guests()); const data=['QR Code,First Name,Last Name,Email,Phone,Source,Status',...rows.map(g=>[g.id,g.first,g.last,g.email,g.phone,g.source,g.checked?'Checked in':'Registered'].map(v=>`"${String(v).replaceAll('"','""')}"`).join(','))].join('\n'); const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([data],{type:'text/csv'})); a.download=`etoile-${type}-report.csv`; a.click(); URL.revokeObjectURL(a.href); toast('Export CSV เรียบร้อยแล้ว') }
-function bind(){ document.querySelectorAll('[data-action]').forEach(el=>el.addEventListener('click',e=>action(e,el))); document.querySelectorAll('[data-page]').forEach(el=>el.addEventListener('click',()=>{state.adminPage=el.dataset.page;state.query='';shell()})); document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',submit)); const search=document.querySelector('[data-search]'); if(search) search.addEventListener('input',e=>{state.query=e.target.value; const p=e.target.selectionStart;shell(); const next=document.querySelector('[data-search]'); next?.focus(); next?.setSelectionRange(p,p)}) }
-function action(e,el){ const a=el.dataset.action; if(a==='home'){location.href='../';return} if(a==='staffPortal'){location.href='check-in/';return} if(a==='adminPortal'){location.href='admin/';return} if(a==='register'||a==='findQR')state.modal=a; if(a==='close')state.modal=null; if(a==='staffLogout'||a==='adminLogout'){location.href='../';return} if(a==='checkin'){let l=guests(),g=l.find(x=>x.id===el.dataset.id);g.checked=true;saveGuests(l);log('Guest checked in',`${g.first} ${g.last} · ${g.id}`);toast('Check-in สำเร็จ');state.staffResult=g} if(a==='export'||a==='exportAll')csv(el.dataset.type||'register'); if(a==='clearSearch'){state.query=''} if(a==='calendar'){toast('เพิ่มกำหนดการลงในปฏิทินแล้ว (Demo)')} if(a==='map'){window.open('https://maps.google.com/?q=Bangkok','_blank')} if(a==='toggle'){el.classList.toggle('on');toast('อัปเดตสถานะการลงทะเบียนแล้ว')} if(a==='saveConfig'){log('Configuration saved','Event configuration updated');toast('บันทึกการตั้งค่าแล้ว')} if(a==='newUser'){toast('ฟังก์ชันเพิ่มผู้ใช้สำหรับ Demo')} if(a==='importDemo'){let l=guests();l.push({id:`LET-${26000+l.length+1}`,first:'Suda',last:'Pongsawat',phone:'082-333-1200',email:'suda.import@example.com',source:'Excel Import',checked:false,created:'08 Nov 2026, 12:10'});saveGuests(l);log('Import completed','1 guest imported from demo file');toast('นำเข้ารายชื่อ Demo 1 รายการแล้ว')} if(a==='calendar'||a==='map'){} shell() }
-function submit(e){ e.preventDefault(); const f=e.currentTarget, data=Object.fromEntries(new FormData(f)); if(f.dataset.form==='register'){const l=guests(), exists=l.some(x=>x.email.toLowerCase()===data.email.toLowerCase()||x.phone.replace(/\D/g,'')===data.phone.replace(/\D/g,''));if(exists){toast('อีเมลหรือเบอร์โทรศัพท์นี้ลงทะเบียนแล้ว');return}const g={id:`LET-${26000+l.length+1}`,first:data.first,last:data.last,phone:data.phone,email:data.email,source:'Website',checked:false,created:'08 Nov 2026, 12:30'};l.push(g);saveGuests(l);log('New registration',`${g.first} ${g.last} · ${g.id}`);state.modal=g;shell()} else if(f.dataset.form==='findQR'){const term=data.term.toLowerCase().replace(/\D/g,'')||data.term.toLowerCase();const g=guests().find(x=>x.email.toLowerCase()===data.term.toLowerCase()||x.phone.replace(/\D/g,'')===term);if(!g){toast('ไม่พบข้อมูลการลงทะเบียน');return}state.modal=g;shell()} else if(f.dataset.form==='scan'){const g=guests().find(x=>x.id.toLowerCase()===data.term.trim().toLowerCase());if(!g){toast('ไม่พบ QR code นี้');return}state.staffResult=g;shell()} else if(f.dataset.form==='staffLogin'||f.dataset.form==='adminLogin'){const role=f.dataset.form==='staffLogin'?'staff':'admin';if(data.username===role&&data.password==='demo123'){state.view=role==='staff'?'staff':'admin';log(`${role==='staff'?'Staff':'Admin'} login`,data.username);shell()}else toast('Username หรือ Password ไม่ถูกต้อง')} }
+const initialRoute = location.pathname.replace(/\/+$/, "");
+const state = {
+  view:
+    initialRoute.includes("/check-in/") || initialRoute.endsWith("/check-in")
+      ? "staffLogin"
+      : initialRoute.includes("/admin/") || initialRoute.endsWith("/admin")
+        ? "adminLogin"
+        : "home",
+  adminPage: "overview",
+  staffUser: null,
+  adminUser: null,
+  modal: null,
+  query: "",
+  logs: [],
+};
+function loadGuests() {
+  try {
+    return JSON.parse(localStorage.getItem("etoile-guests")) || seed;
+  } catch {
+    return seed;
+  }
+}
+function guests() {
+  return loadGuests();
+}
+function saveGuests(list) {
+  localStorage.setItem("etoile-guests", JSON.stringify(list));
+}
+function log(action, detail) {
+  const list = JSON.parse(localStorage.getItem("etoile-logs") || "[]");
+  list.unshift({ action, detail, time: new Date().toLocaleString("th-TH") });
+  localStorage.setItem("etoile-logs", JSON.stringify(list.slice(0, 40)));
+  state.logs = list;
+}
+function esc(t = "") {
+  return String(t).replace(
+    /[&<>'"]/g,
+    (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[
+      c
+      ],
+  );
+}
+function toast(text) {
+  const x = document.querySelector("#toast");
+  x.textContent = text;
+  x.classList.add("show");
+  setTimeout(() => x.classList.remove("show"), 2600);
+}
+function shell() {
+  document.querySelector("#app").innerHTML =
+    state.view === "home"
+      ? home()
+      : state.view === "staffLogin"
+        ? login("staff")
+        : state.view === "staff"
+          ? staff()
+          : state.view === "adminLogin"
+            ? login("admin")
+            : admin();
+  bind();
+}
+function home() {
+  return `<main class="guest-home source-page"><header class="topbar"><a class="brand" href="./">L'ÉTOILE<small>FASHION WEEK / BANGKOK</small></a><div class="top-actions"><a class="nav-link" href="https://maps.google.com/?q=The+Glass+Pavilion+Bangkok" target="_blank">Venue &amp; Map</a><button class="nav-link" data-action="findQR">ค้นหา QR Code</button><button class="nav-link subtle" data-action="staffPortal">Staff</button><button class="nav-link subtle" data-action="adminPortal">Admin</button><a class="rsvp-link" href="#registration">RSVP Access</a></div></header><div class="source-glow"><section class="source-hero"><div class="source-copy"><div class="source-stamp"><span>L'ÉTOILE Haute Couture Runway 2026</span><i></i><small>Official RSVP</small></div><h1>The Celestial <em>Ode</em></h1><p>An intimate architectural showcase exploring star-lit drapery, molten gold embroidery, and midnight silhouettes along the Chao Phraya River.</p><div class="source-meta"><div><label>Date &amp; Time</label><b>24 October 2026</b><span>18:30 — 22:00 ICT</span></div><div><label>Venue</label><b>The Glass Pavilion</b><span>Chao Phraya, Bangkok</span></div><div><label>Dress Code</label><b>Avant-Garde Black Tie</b><span>&amp; Molten Gold Accents</span></div></div><div class="source-note">● Exclusive Salon Privé Accreditation · Limited to 450 guests</div></div><figure class="source-visual"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq6vIwtaluRnQ0dQkCpLOSuYLNhzMFRnAjsqDtH-SBx4Dq-VgvCUFgdtSAA6gfG9AyxSr4T1vm67b7tEXRh1WpfH-YFVJ_V6xwYzzWWYAeTlhN_sYtD-9YrrUHvU_k3SfBcDBW3dmrpMfch3iesDqpxioIMWFbvKPv8vV8IkMz4FxYs4dONnhawAxR7GcIk7oSJ3GcTzfk7JBTMjaLoZWqGAQ8v9DshoSxhvN3mNeG" alt="Midnight couture look" /><figcaption><span>LOOK 01 · STAGING<br><i>Astral Void Gown</i></span><small>PARIS ATELIER</small></figcaption></figure></section><section id="registration" class="source-registration"><div class="source-form-head"><span class="eyebrow">Guest accreditation desk</span><h2>ระบบลงทะเบียนเข้าร่วมงาน</h2><p>กรุณากรอกข้อมูลเพื่อรับบัตรเชิญ Digital E-Ticket และ QR Code เข้างานส่วนบุคคล</p></div><form data-form="register"><div class="form-grid"><div class="field"><label>ชื่อจริง / First Name</label><input required name="first" placeholder="เช่น ธนภัทร หรือ Charlotte" /></div><div class="field"><label>นามสกุล / Last Name</label><input required name="last" placeholder="เช่น วรโชติเมธี หรือ Laurent" /></div></div><div class="form-grid"><div class="field"><label>เบอร์โทรศัพท์ / Phone Number</label><input required name="phone" placeholder="081 234 5678" /></div><div class="field"><label>อีเมลสำหรับรับ QR Code</label><input required name="email" type="email" placeholder="guest@email.com" /></div></div><div class="field"><label>วันที่ต้องการเข้าร่วมงาน</label><select><option>24 October 2026 · Opening Night Gala</option></select></div><label class="consent"><input required type="checkbox" name="consent" /> <span>ยินยอมให้จัดเก็บและใช้ข้อมูลส่วนบุคคลตาม PDPA เพื่อการออก E-Ticket, ยืนยันสิทธิ์ที่นั่ง และอำนวยความสะดวกในการเข้าร่วมงาน</span></label><p class="delivery-note">✦ ระบบจะจัดส่งบัตร E-Ticket พร้อม QR Code และพิกัด Google Maps ให้ทางอีเมลทันทีหลังยืนยัน</p><button class="button">ยืนยันการลงทะเบียน <span>→</span></button></form></section></div></main>${modal()}`;
+}
+function login(type) {
+  const isStaff = type === "staff";
+  return `<main class="login"><section class="login-card"><div class="brand">L'ÉTOILE<small>${isStaff ? "STAFF CHECK-IN" : "EVENT MANAGEMENT"}</small></div><div class="eyebrow" style="margin-top:38px">Secure access</div><h1>${isStaff ? "Staff sign in" : "Admin portal"}</h1><p class="muted">เข้าสู่ระบบเพื่อใช้งาน ${isStaff ? "จุดเช็คอินหน้างาน" : "การจัดการงานอีเวนต์"}</p><form data-form="${type}Login"><div class="field"><label>Username</label><input required name="username" autocomplete="username" placeholder="Username" /></div><div class="field"><label>Password</label><input required name="password" type="password" autocomplete="current-password" placeholder="Password" /></div><button class="button" style="width:100%;margin-top:10px">Sign in →</button></form><div class="hint">Demo account<br>${isStaff ? "staff / demo123" : "admin / demo123"}</div><button class="button ghost" style="margin-top:18px;width:100%" data-action="home">← กลับหน้าหลัก</button></section></main>`;
+}
+function modal() {
+  if (!state.modal) return "";
+  if (state.modal === "register")
+    return `<div class="modal-wrap"><section class="modal"><button class="close" data-action="close">×</button><div class="eyebrow">Reserve your place</div><h2>ลงทะเบียนเข้าร่วมงาน</h2><p class="muted">กรุณากรอกรายละเอียดเพื่อรับ Digital Pass ทางอีเมล</p><form data-form="register"><div class="form-grid"><div class="field"><label>ชื่อจริง</label><input required name="first" placeholder="First name" /></div><div class="field"><label>นามสกุล</label><input required name="last" placeholder="Last name" /></div></div><div class="form-grid"><div class="field"><label>เบอร์โทรศัพท์</label><input required name="phone" placeholder="08x-xxx-xxxx" /></div><div class="field"><label>อีเมล</label><input required name="email" type="email" placeholder="you@email.com" /></div></div><label class="consent"><input required type="checkbox" name="consent" /> <span>ข้าพเจ้ายินยอมให้ L'ÉTOILE เก็บและใช้ข้อมูลส่วนบุคคลเพื่อวัตถุประสงค์ในการจัดงานและการติดต่อที่เกี่ยวข้อง</span></label><button class="button" style="width:100%">ยืนยันการลงทะเบียน →</button></form></section></div>`;
+  if (state.modal === "findQR")
+    return `<div class="modal-wrap"><section class="modal"><button class="close" data-action="close">×</button><div class="eyebrow">Digital pass recovery</div><h2>ค้นหา QR Code</h2><p class="muted">กรอกอีเมลหรือเบอร์โทรศัพท์ที่ใช้ลงทะเบียน</p><form data-form="findQR"><div class="field"><label>อีเมล หรือ เบอร์โทรศัพท์</label><input required name="term" placeholder="you@email.com หรือ 08x-xxx-xxxx" /></div><button class="button" style="width:100%">ค้นหาบัตรของฉัน</button></form></section></div>`;
+  const g = state.modal;
+  return `<div class="modal-wrap"><section class="modal confirmation"><button class="close" data-action="close">×</button><div class="eyebrow">Registration confirmed</div><h2>พบกันในค่ำคืนพิเศษ</h2><p class="muted">เราได้ส่ง QR code ไปที่ <b>${esc(g.email)}</b> แล้ว</p><div class="ticket"><span class="eyebrow">Digital invitation</span><strong>${esc(g.first)} ${esc(g.last)}</strong><div class="ticket-row"><span>${eventInfo.date}<br>${eventInfo.time}</span><span>${g.id}</span></div><div class="qr-art"></div></div><div class="modal-actions"><button class="button" data-action="calendar">+ Add to calendar</button><button class="button secondary" data-action="map">ดูแผนที่</button></div></section></div>`;
+}
+function staff() {
+  const recent = guests()
+    .filter((x) => x.checked)
+    .slice(0, 5);
+  const result = state.staffResult;
+  return `<main class="staff-shell"><header class="staff-head"><div class="brand">L'ÉTOILE<small>STAFF CHECK-IN</small></div><div><span class="status ok">● Station Online</span> <button class="button ghost" data-action="staffLogout">Sign out</button></div></header><div class="staff-main"><div class="staff-title"><div><div class="eyebrow">Arrival desk / ${eventInfo.date}</div><h1>Welcome guests with grace.</h1></div><span class="muted">${guests().filter((x) => x.checked).length} arrivals today</span></div><div class="scanner-grid"><section class="scanner"><div class="scan-box"></div><div class="scanner-note">POSITION QR CODE INSIDE THE FRAME</div></section><section class="guest-result">${result ? staffCard(result) : `<div class="eyebrow">Ready to scan</div><h2>Waiting for an arrival</h2><p class="muted">เปิดกล้องเพื่อสแกน QR code หรือตรวจสอบด้วยรหัสสำรอง</p>`}<form data-form="scan" class="quick-search"><input name="term" required placeholder="กรอก QR code เช่น LET-26001" /><button class="button">ตรวจสอบ</button></form><div class="recent"><div class="eyebrow" style="margin:15px 0 4px">Recent check-ins</div>${recent.length ? recent.map((x) => `<div class="recent-row"><span>${esc(x.first)} ${esc(x.last)}<br><small class="muted">${x.id}</small></span><span class="status ok">Checked in</span></div>`).join("") : '<div class="empty">ยังไม่มีผู้เช็คอิน</div>'}</div></section></div></div></main>`;
+}
+function staffCard(g) {
+  return `<div class="eyebrow">Guest verified</div><h2>${esc(g.first)} ${esc(g.last)}</h2><p class="muted">${esc(g.email)} · ${esc(g.phone)}</p><div style="margin:20px 0"><span class="status ${g.checked ? "checked" : "ok"}">${g.checked ? "Already checked in" : "Eligible for entry"}</span></div>${g.checked ? `<p class="muted">เช็คอินแล้ว — สามารถตรวจสอบข้อมูลให้แขกได้</p>` : `<button class="button" data-action="checkin" data-id="${g.id}">ยืนยัน Check-in →</button>`}`;
+}
+function admin() {
+  return `<main class="admin"><aside class="sidebar"><div class="brand">L'ÉTOILE<small>HAUTE COUTURE MANAGEMENT</small></div>${[
+    ["Overview", "overview"],
+    ["Reports", "label"],
+    ["Register report", "register"],
+    ["Attendee report", "attendee"],
+    ["Control center", "label"],
+    ["Activity logs", "logs"],
+    ["Users", "users"],
+    ["Event configuration", "config"],
+    ["Import register", "import"],
+  ]
+    .map(([n, k]) =>
+      k === "label"
+        ? `<div class="nav-label">${n}</div>`
+        : `<button class="nav-item ${state.adminPage === k ? "active" : ""}" data-page="${k}">${n}</button>`,
+    )
+    .join(
+      "",
+    )}</aside><header class="admin-head"><span class="live">● EVENT STATUS: LIVE / OPEN</span><div><span class="muted">Admin</span> <button class="button ghost" data-action="adminLogout">Logout</button></div></header><section class="admin-main">${adminContent()}</section></main>`;
+}
+function pageHead(label, title, action = "") {
+  return `<div class="page-head"><div><div class="eyebrow">${label}</div><h1>${title}</h1></div>${action}</div>`;
+}
+function adminContent() {
+  const list = guests(),
+    checked = list.filter((g) => g.checked);
+  if (state.adminPage === "overview")
+    return `${pageHead("Overview · ภาพรวมระบบ", "Executive overview", `<button class="button secondary" data-action="exportAll">Export report</button>`)}<div class="metric-grid"><div class="metric"><div class="eyebrow">Today’s registrations</div><div class="number">${list.filter((x) => x.created.includes("08 Nov")).length}</div><small>รายการใหม่ในวันนี้</small></div><div class="metric"><div class="eyebrow">Total registered</div><div class="number">${list.length}</div><small>${eventInfo.capacity - list.length} seats remaining</small></div><div class="metric"><div class="eyebrow">Event attendance</div><div class="number">${checked.length}</div><small>${list.length ? Math.round((checked.length / list.length) * 100) : 0}% of registered guests</small></div></div><div class="split"><section class="panel"><h3>Registration capacity</h3><div style="display:flex;justify-content:space-between"><span>${list.length} registered</span><span class="gold">${eventInfo.capacity} capacity</span></div><div class="progress"><span style="width:${Math.min(100, (list.length / eventInfo.capacity) * 100)}%"></span></div><p class="muted">ระบบจะหยุดรับลงทะเบียนโดยอัตโนมัติเมื่อครบจำนวนที่กำหนด</p></section><section class="panel"><h3>Latest activity</h3>${activities()
+        .slice(0, 4)
+        .map(
+          (x) =>
+            `<div class="activity"><span>${x.action}<br><small class="muted">${x.detail}</small></span><small class="muted">${x.time}</small></div>`,
+        )
+        .join("") || '<div class="empty">ยังไม่มีการทำรายการ</div>'
+      }</section></div>`;
+  if (["register", "attendee"].includes(state.adminPage)) {
+    const isA = state.adminPage === "attendee",
+      rows = (isA ? checked : list).filter(filterGuest);
+    return `${pageHead("Reports", isA ? "Attendee report" : "Register report", `<button class="button" data-action="export" data-type="${isA ? "attendee" : "register"}">Export CSV</button>`)}<div class="table-tools"><input data-search="guests" placeholder="ค้นหาด้วยชื่อ อีเมล หรือ QR code" value="${esc(state.query)}" /><button class="button ghost" data-action="clearSearch">Clear</button></div><div class="panel table-wrap"><table class="data-table"><thead><tr><th>Guest</th><th>Contact</th><th>QR Code</th><th>Source</th><th>Status</th></tr></thead><tbody>${rows.length ? rows.map((g) => `<tr><td><span class="person">${esc(g.first)} ${esc(g.last)}</span></td><td>${esc(g.email)}<br><span class="muted">${esc(g.phone)}</span></td><td class="gold">${g.id}</td><td>${g.source}</td><td><span class="status ${g.checked ? "ok" : "wait"}">${g.checked ? "Checked in" : "Registered"}</span></td></tr>`).join("") : `<tr><td colspan="5" class="empty">ไม่พบรายชื่อ</td></tr>`}</tbody></table></div>`;
+  }
+  if (state.adminPage === "logs") {
+    return `${pageHead("Control center", "Activity logs")}<section class="panel">${activities()
+        .map(
+          (x) =>
+            `<div class="activity"><span><b>${esc(x.action)}</b><br><small class="muted">${esc(x.detail)}</small></span><span class="muted">${esc(x.time)}</span></div>`,
+        )
+        .join("") || '<div class="empty">ยังไม่มีการบันทึกกิจกรรม</div>'
+      }</section>`;
+  }
+  if (state.adminPage === "users")
+    return `${pageHead("Control center", "Users", `<button class="button" data-action="newUser">+ Add user</button>`)}<div class="panel table-wrap"><table class="data-table"><thead><tr><th>Name</th><th>Username</th><th>Role</th><th>Status</th></tr></thead><tbody><tr><td class="person">Eleonore Vance</td><td>admin</td><td>Administrator</td><td><span class="status ok">Active</span></td></tr><tr><td class="person">Ariya K.</td><td>staff</td><td>Check-in Staff</td><td><span class="status ok">Active</span></td></tr></tbody></table></div>`;
+  if (state.adminPage === "config")
+    return `${pageHead("Control center", "Event configuration")}<section class="panel"><div class="setting-row"><div><strong>Registration status</strong><br><span class="muted">เปิดรับลงทะเบียนผ่านหน้าเว็บไซต์</span></div><button class="switch on" data-action="toggle"></button></div><div class="form-grid"><div class="field"><label>Registration opens</label><input value="01 October 2026, 09:00" /></div><div class="field"><label>Registration closes</label><input value="23 October 2026, 18:00" /></div><div class="field"><label>Guest capacity</label><input value="450" type="number" /></div><div class="field"><label>Event date</label><input value="24 October 2026" /></div></div><button class="button" data-action="saveConfig">Save configuration</button></section>`;
+  return `${pageHead("Control center", "Import register")}<section class="panel"><h3>Import guest list</h3><p class="muted">รองรับไฟล์ Excel / CSV ที่มีคอลัมน์ First Name, Last Name, Phone และ Email</p><div class="file-input"><input type="file" data-import accept=".csv,.xlsx" /><p>เลือกไฟล์รายชื่อเพื่อจำลองการนำเข้า</p></div><button class="button" data-action="importDemo">Import demo records</button></section>`;
+}
+function activities() {
+  const saved = JSON.parse(localStorage.getItem("etoile-logs") || "[]");
+  return saved.length
+    ? saved
+    : [
+      {
+        action: "System ready",
+        detail: "Demo registration system initialized",
+        time: "Just now",
+      },
+    ];
+}
+function filterGuest(g) {
+  const q = state.query.trim().toLowerCase();
+  return (
+    !q ||
+    `${g.first} ${g.last} ${g.email} ${g.phone} ${g.id}`
+      .toLowerCase()
+      .includes(q)
+  );
+}
+function csv(type) {
+  const rows =
+    type === "attendee" ? guests().filter((x) => x.checked) : guests();
+  const data = [
+    "QR Code,First Name,Last Name,Email,Phone,Source,Status",
+    ...rows.map((g) =>
+      [
+        g.id,
+        g.first,
+        g.last,
+        g.email,
+        g.phone,
+        g.source,
+        g.checked ? "Checked in" : "Registered",
+      ]
+        .map((v) => `"${String(v).replaceAll('"', '""')}"`)
+        .join(","),
+    ),
+  ].join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([data], { type: "text/csv" }));
+  a.download = `etoile-${type}-report.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast("Export CSV เรียบร้อยแล้ว");
+}
+function bind() {
+  document
+    .querySelectorAll("[data-action]")
+    .forEach((el) => el.addEventListener("click", (e) => action(e, el)));
+  document.querySelectorAll("[data-page]").forEach((el) =>
+    el.addEventListener("click", () => {
+      state.adminPage = el.dataset.page;
+      state.query = "";
+      shell();
+    }),
+  );
+  document
+    .querySelectorAll("form")
+    .forEach((f) => f.addEventListener("submit", submit));
+  const search = document.querySelector("[data-search]");
+  if (search)
+    search.addEventListener("input", (e) => {
+      state.query = e.target.value;
+      const p = e.target.selectionStart;
+      shell();
+      const next = document.querySelector("[data-search]");
+      next?.focus();
+      next?.setSelectionRange(p, p);
+    });
+}
+function action(e, el) {
+  const a = el.dataset.action;
+  if (a === "home") {
+    location.href = "../";
+    return;
+  }
+  if (a === "staffPortal") {
+    location.href = "check-in/";
+    return;
+  }
+  if (a === "adminPortal") {
+    location.href = "admin/";
+    return;
+  }
+  if (a === "register" || a === "findQR") state.modal = a;
+  if (a === "close") state.modal = null;
+  if (a === "staffLogout" || a === "adminLogout") {
+    location.href = "../";
+    return;
+  }
+  if (a === "checkin") {
+    let l = guests(),
+      g = l.find((x) => x.id === el.dataset.id);
+    g.checked = true;
+    saveGuests(l);
+    log("Guest checked in", `${g.first} ${g.last} · ${g.id}`);
+    toast("Check-in สำเร็จ");
+    state.staffResult = g;
+  }
+  if (a === "export" || a === "exportAll") csv(el.dataset.type || "register");
+  if (a === "clearSearch") {
+    state.query = "";
+  }
+  if (a === "calendar") {
+    toast("เพิ่มกำหนดการลงในปฏิทินแล้ว (Demo)");
+  }
+  if (a === "map") {
+    window.open("https://maps.google.com/?q=Bangkok", "_blank");
+  }
+  if (a === "toggle") {
+    el.classList.toggle("on");
+    toast("อัปเดตสถานะการลงทะเบียนแล้ว");
+  }
+  if (a === "saveConfig") {
+    log("Configuration saved", "Event configuration updated");
+    toast("บันทึกการตั้งค่าแล้ว");
+  }
+  if (a === "newUser") {
+    toast("ฟังก์ชันเพิ่มผู้ใช้สำหรับ Demo");
+  }
+  if (a === "importDemo") {
+    let l = guests();
+    l.push({
+      id: `LET-${26000 + l.length + 1}`,
+      first: "Suda",
+      last: "Pongsawat",
+      phone: "082-333-1200",
+      email: "suda.import@example.com",
+      source: "Excel Import",
+      checked: false,
+      created: "08 Nov 2026, 12:10",
+    });
+    saveGuests(l);
+    log("Import completed", "1 guest imported from demo file");
+    toast("นำเข้ารายชื่อ Demo 1 รายการแล้ว");
+  }
+  if (a === "calendar" || a === "map") {
+  }
+  shell();
+}
+function submit(e) {
+  e.preventDefault();
+  const f = e.currentTarget,
+    data = Object.fromEntries(new FormData(f));
+  if (f.dataset.form === "register") {
+    const l = guests(),
+      exists = l.some(
+        (x) =>
+          x.email.toLowerCase() === data.email.toLowerCase() ||
+          x.phone.replace(/\D/g, "") === data.phone.replace(/\D/g, ""),
+      );
+    if (exists) {
+      toast("อีเมลหรือเบอร์โทรศัพท์นี้ลงทะเบียนแล้ว");
+      return;
+    }
+    const g = {
+      id: `LET-${26000 + l.length + 1}`,
+      first: data.first,
+      last: data.last,
+      phone: data.phone,
+      email: data.email,
+      source: "Website",
+      checked: false,
+      created: "08 Nov 2026, 12:30",
+    };
+    l.push(g);
+    saveGuests(l);
+    log("New registration", `${g.first} ${g.last} · ${g.id}`);
+    state.modal = g;
+    shell();
+  } else if (f.dataset.form === "findQR") {
+    const term =
+      data.term.toLowerCase().replace(/\D/g, "") || data.term.toLowerCase();
+    const g = guests().find(
+      (x) =>
+        x.email.toLowerCase() === data.term.toLowerCase() ||
+        x.phone.replace(/\D/g, "") === term,
+    );
+    if (!g) {
+      toast("ไม่พบข้อมูลการลงทะเบียน");
+      return;
+    }
+    state.modal = g;
+    shell();
+  } else if (f.dataset.form === "scan") {
+    const g = guests().find(
+      (x) => x.id.toLowerCase() === data.term.trim().toLowerCase(),
+    );
+    if (!g) {
+      toast("ไม่พบ QR code นี้");
+      return;
+    }
+    state.staffResult = g;
+    shell();
+  } else if (
+    f.dataset.form === "staffLogin" ||
+    f.dataset.form === "adminLogin"
+  ) {
+    const role = f.dataset.form === "staffLogin" ? "staff" : "admin";
+    if (data.username === role && data.password === "demo123") {
+      state.view = role === "staff" ? "staff" : "admin";
+      log(`${role === "staff" ? "Staff" : "Admin"} login`, data.username);
+      shell();
+    } else toast("Username หรือ Password ไม่ถูกต้อง");
+  }
+}
 shell();
